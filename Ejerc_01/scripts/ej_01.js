@@ -4,4 +4,5 @@ const tieneMascota = true;
 edad = 22;
 // tieneMascota = false;
 console.log(nombre, edad, tieneMascota);
-console.log(`${nombre} tiene ${edad} y `+(tieneMascota ? 'tiene':'no tiene')+' mascota');
+console.log(typeof nombre, typeof edad, typeof tieneMascota);
+console.log(`${nombre} tiene ${edad} y ${tieneMascota ? "tiene" : "no tiene"} mascota`);
