@@ -1,4 +1,3 @@
-
 function nuevoEstudiante(nombre, apellidos, calificacion, aprobado) {
     return {
         nombre: nombre,

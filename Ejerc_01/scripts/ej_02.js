@@ -7,8 +7,8 @@ let coche = {
 };
 
 console.table(coche);
-const {marca: marca, modelo: modelo} = coche;
-console.log(marca, modelo);
+const {marca: MARCA, modelo: MODELO} = coche;
+console.log(MARCA, MODELO);
 coche.estaDisponible = true;
 coche.color = "rojo";
 delete coche.anio;
