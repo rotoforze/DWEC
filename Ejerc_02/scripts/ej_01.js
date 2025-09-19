@@ -4,9 +4,8 @@ for (let i = 0; i<6; i++) {
 };
 console.table(numeros);
 
-let dobles = [];
-numeros.map((numero) => {
-    if (!dobles.includes(numero)) dobles.push(numero);
+let dobles = numeros.map((numero) => {
+    return numero * 2;
 });
 console.table(dobles);
 
