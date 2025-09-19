@@ -1,9 +1,15 @@
-import {crearPerfil} from './gestorUsuarios.js';
+import {crearPerfil as crear, esMayorDeEdad, obtenerMayoresDeEdad, calcularPromedioEdad} from './gestorUsuarios.js';
 import mostrarPerfil from './gestorUsuarios.js';
 const usuarios = [
-    crearPerfil(`Alex`, `alexbg87@educastur.es`, 22),
-    crearPerfil(`Cova`, `cova@educastur.es`, 22)
+    crear(`Alex`, `alexbg87@educastur.es`, 22),
+    crear(`Cova`, `cova@educastur.es`, 21),
+    crear(`Eneas`, `eneas@educastur.es`, 19),
+    crear(`Miguel`, `Miguel@educastur.es`, 17),
+    crear(`Gonzalo`, `Gonzalo@educastur.es`, 14)
 ]
-for (const usuario of usuarios) {
-    console.log(mostrarPerfil(usuario));
-}
+
+let usuariosMayoresDeEdad = obtenerMayoresDeEdad(usuarios);
+console.log(`Usuarios mayores de edad:`);
+usuariosMayoresDeEdad.map((usuario)=> console.log(mostrarPerfil(usuario)));
+
+console.log(`La edad promedio de los usuarios es: [${calcularPromedioEdad(usuarios)}].`);
