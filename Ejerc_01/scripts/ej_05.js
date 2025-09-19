@@ -13,7 +13,8 @@ let estudiantes = [
     nuevoEstudiante("Eneas", "De la Rosa", 8, true)
 ];
 estudiantes.map((estudiante) => {
-    if ((estudiante.calificacion < 5 && estudiante.aprobado) || (estudiante.calificacion >= 5 && !estudiante.aprobado)) {
+    if ((estudiante.calificacion < 5 && estudiante.aprobado) || 
+        (estudiante.calificacion >= 5 && !estudiante.aprobado)) {
         console.warn(`⚠️ Incoherencia en el registro de ${estudiante.nombre} ${estudiante.apellidos}: calificación = ${estudiante.calificacion}, aprobado = ${estudiante.aprobado}. Se ha corregido.`);
         return estudiante.aprobado = !estudiante.aprobado;
     }

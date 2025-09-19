@@ -45,7 +45,7 @@ cursosDestacados.map((curso) => {
 });
 cursos.map((curso) => {
     if (curso.listaEstudiantes.map((alumno) => {
-        return alumno.calificacion < 5 ? true : false;
+        return alumno.calificacion < 4 ? true : false;
     }).includes(true)) {
         console.warn(`⚠️ Atención: En el curso ${curso.nombreCurso} hay estudiantes con calificaciones muy bajas.`);
     }
