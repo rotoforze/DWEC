@@ -24,12 +24,5 @@ export function calcularValorTotalInventario(inventario) {
     return valorTotal;
 };
 export default function resumenInventario(inventario) {
-    console.log(`Número total de productos: ${inventario.length}. Número de categorías distintas: ${cuantasCategorias(inventario)}. Valor total: ${calcularValorTotalInventario(inventario)}`);
-};
-function cuantasCategorias(inventario) {
-    let categorias = [];
-    for (const producto of inventario) {
-      if (!categorias.includes(producto.categoriaProducto)) categorias.push(producto.categoriaProducto);
-    };
-    return categorias.length;
+    return `Número total de productos: ${inventario.length}. Número de categorías distintas: ${(new Set(inventario.map(producto => producto.categoriaProducto))).size}. Valor total: ${calcularValorTotalInventario(inventario)}`;
 };
