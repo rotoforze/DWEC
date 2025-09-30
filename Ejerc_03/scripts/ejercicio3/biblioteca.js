@@ -34,3 +34,8 @@ export function eliminarLibro(id) {
     libros.splice(libros.findIndex(libro => libro.id === id), 1);
     reordenarIDs();
 }
+
+// ejercicio 3.5
+export function calcularTotalPaginas() {
+    return libros.reduce((acumulador, libro) => acumulador + libro.paginas, 0);
+};
