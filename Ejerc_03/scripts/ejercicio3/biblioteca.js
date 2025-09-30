@@ -25,13 +25,11 @@ export function buscarLibro(id) {
     return libros.find(libro => libro.id === id);
 }
 function reordenarIDs() {
-    let contabilizador = 0;
-    libros.forEach((libro) => {
-        libro.id = contabilizador++;
-    });
+    libros.reduce((acumulador, libro) => libro.id = acumulador + 1, -1);
 }
 export function eliminarLibro(id) {
     libros.splice(libros.findIndex(libro => libro.id === id), 1);
+    // reordeno los libros para evitar duplicados
     reordenarIDs();
 }
 
@@ -43,4 +41,12 @@ export function calcularTotalPaginas() {
 // ejercicio 3.6
 export function ordenarPorPaginas(){
     libros = libros.sort((libro1, libro2) => libro2.paginas - libro1.paginas); // mayor a menor
+}
+
+// ejercicio 3.7
+export function hayLibrosLargos(limitePaginas) {
+    return libros.some(libro => libro.paginas > limitePaginas);  
+}
+export function todosSonLibrosCortos(limitePaginas) {
+    return libros.every(libro => libro.paginas < limitePaginas);
 }

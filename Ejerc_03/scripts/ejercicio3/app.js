@@ -1,4 +1,4 @@
-import { agregarLibro, nuevoLibro, obtenerLibros, buscarLibro, eliminarLibro, calcularTotalPaginas, ordenarPorPaginas } from "./biblioteca.js";
+import { agregarLibro, nuevoLibro, obtenerLibros, buscarLibro, eliminarLibro, calcularTotalPaginas, ordenarPorPaginas, hayLibrosLargos, todosSonLibrosCortos } from "./biblioteca.js";
 
 console.table(obtenerLibros());
 
@@ -17,3 +17,10 @@ console.log(calcularTotalPaginas());
 // ejercicio 3.6
 ordenarPorPaginas();
 console.table(obtenerLibros());
+
+// ejercicio 3.7
+console.log(hayLibrosLargos(1200)); // false, el libro con más pagínas tiene 1178
+console.log(hayLibrosLargos(1100)); // true
+
+console.log(todosSonLibrosCortos(1200)); // true, porque todos los libros tienen menos de 1200 páginas
+console.log(todosSonLibrosCortos(200)); // false, porque no todos tienen menos de 200
