@@ -11,7 +11,7 @@ let libros = [
     { id: 9, titulo: 'El Código Da Vinci', autor: 'Dan Brown', paginas: 489 }
 ];
 export function nuevoLibro(id, titulo, autor, paginas) {
-    return {id, titulo, autor, paginas}
+    return {id, titulo, autor, paginas};
 };
 export function agregarLibro(nuevoLibro) {
     libros.push(nuevoLibro);
