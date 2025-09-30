@@ -21,6 +21,16 @@ export function obtenerLibros() {
 };
 
 // ejercicio 3.4
-function buscarLibro(id) {
-
+export function buscarLibro(id) {
+    return libros.find(libro => libro.id === id);
+}
+function reordenarIDs() {
+    let contabilizador = 0;
+    libros.forEach((libro) => {
+        libro.id = contabilizador++;
+    });
+}
+export function eliminarLibro(id) {
+    libros.splice(libros.findIndex(libro => libro.id === id), 1);
+    reordenarIDs();
 }
