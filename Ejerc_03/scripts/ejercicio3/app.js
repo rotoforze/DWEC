@@ -1,4 +1,4 @@
-import { agregarLibro, nuevoLibro, obtenerLibros, buscarLibro, eliminarLibro, calcularTotalPaginas } from "./biblioteca.js";
+import { agregarLibro, nuevoLibro, obtenerLibros, buscarLibro, eliminarLibro, calcularTotalPaginas, ordenarPorPaginas } from "./biblioteca.js";
 
 console.table(obtenerLibros());
 
@@ -13,3 +13,7 @@ console.table(obtenerLibros());
 
 // ejercicio 3.5
 console.log(calcularTotalPaginas());
+
+// ejercicio 3.6
+ordenarPorPaginas();
+console.table(obtenerLibros());

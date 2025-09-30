@@ -39,3 +39,8 @@ export function eliminarLibro(id) {
 export function calcularTotalPaginas() {
     return libros.reduce((acumulador, libro) => acumulador + libro.paginas, 0);
 };
+
+// ejercicio 3.6
+export function ordenarPorPaginas(){
+    libros = libros.sort((libro1, libro2) => libro2.paginas - libro1.paginas); // mayor a menor
+}
