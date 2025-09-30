@@ -40,7 +40,7 @@ export function calcularTotalPaginas() {
 
 // ejercicio 3.6
 export function ordenarPorPaginas(){
-    libros = libros.sort((libro1, libro2) => libro2.paginas - libro1.paginas); // mayor a menor
+    libros.sort((libro1, libro2) => libro1.paginas - libro2.paginas); // menor a mayor
 }
 
 // ejercicio 3.7
