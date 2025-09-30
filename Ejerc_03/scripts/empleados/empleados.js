@@ -11,7 +11,7 @@ export function obtenerEmpleados() {
     return empleados;
 }
 function reordenarIDs() {
-    empleados.reduce((acumulador, empleado) => empleado.id = acumulador + 1, -1);
+    empleados.reduce((acumulador, empleado) => empleado.id = ++acumulador, -1);
 }
 export function eliminarEmpleado(id) {
     empleados.splice(empleados.findIndex(empleado => empleado.id === id), 1);

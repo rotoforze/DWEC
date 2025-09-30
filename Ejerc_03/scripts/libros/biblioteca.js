@@ -25,7 +25,7 @@ export function buscarLibro(id) {
     return libros.find(libro => libro.id === id);
 }
 function reordenarIDs() {
-    libros.reduce((acumulador, libro) => libro.id = acumulador + 1, -1);
+    libros.reduce((acumulador, libro) => libro.id = ++acumulador, -1);
 }
 export function eliminarLibro(id) {
     libros.splice(libros.findIndex(libro => libro.id === id), 1);
