@@ -1,1 +1,1 @@
-console.log(document.getElementsByTagName("data-precio"));
+console.log(document.getElementsByTagName("[data-precio]"));

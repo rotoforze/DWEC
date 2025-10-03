@@ -1,0 +1,1 @@
+console.log(document.querySelector(".navegacion").children[1].textContent);
