@@ -1,0 +1,1 @@
+document.querySelectorAll(".navegacion a")[1].parentElement.parentElement.firstElementChild.style.color = 'orange';
