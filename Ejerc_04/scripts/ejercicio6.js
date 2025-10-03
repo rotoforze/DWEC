@@ -1,1 +1,1 @@
-console.log(document.querySelector("[data-precio]"));
+console.log(document.querySelector("[data-precio]").dataset.precio);
