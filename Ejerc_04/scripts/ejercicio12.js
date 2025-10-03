@@ -1,0 +1,1 @@
+document.querySelector(".navegacion").lastElementChild.textContent += ` (${document.querySelectorAll(".card").length} cursos)`;

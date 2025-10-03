@@ -1,0 +1,1 @@
+document.querySelector(".card").firstElementChild.setAttribute('src', 'img/hacer4.jpg');

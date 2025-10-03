@@ -1,0 +1,1 @@
+document.querySelector("#titulo-principal").className = "titulo-grande";
