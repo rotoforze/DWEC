@@ -1,1 +1,1 @@
-console.log(document.querySelectorAll("a").length);
+console.log(document.querySelectorAll(".navegacion a").length);

@@ -1,17 +1,3 @@
-1. Necesitamos verificar que el script se está cargando correctamente. Localiza el titular principal de la página, el que sirve de banner, y envía su contenido de texto a la consola para confirmar que tienes acceso a él.
-2. Selecciona todos los enlaces ('a') de la barra de navegación y muestra cuántos hay.
-3. El equipo de diseño ha marcado un curso como "premium" para destacarlo. Localiza ese elemento y muestra su contenido en la consola para verificarlo.
-4. Necesitamos hacer un inventario de todos los cursos. Genera una colección con todos los elementos que representan una tarjeta de curso y muéstrala en la consola.
-5. Localiza el formulario de la página por su identificador único 'formulario-contacto'.
-6. Hay un párrafo en la página que contiene información sobre el precio en un atributo de datos. Encuéntralo usando ese atributo y muestra su contenido.
-7. Dentro del formulario de contacto, encuentra el campo destinado a la dirección de correo electrónico.
-8. El segundo enlace del menú de navegación es importante. Selecciónalo directamente (sin iterar una lista) y muestra su texto en la consola.
-9. El título principal de la página es demasiado genérico. Cámbialo para que diga 'Nueva Guía Interactiva del DOM'.
-10. El primer enlace del menú de navegación está roto. Asegúrate de que apunte a 'https://www.google.com'.
-11. Para darle más énfasis al título principal, asígnale la clase 'titulo-grande'. Deberás añadir los estilos para esta clase en el CSS si quieres ver un cambio visual.
-12. El equipo de UX sugiere que sería útil para los usuarios ver de un vistazo cuántos cursos ofrecemos. La tarea consiste en que el enlace del menú que lleva a la sección de contacto refleje siempre el número total de cursos listados en la página. Por ejemplo, si hay 3 cursos, el enlace debería cambiar a "Contacto (3 Cursos)".
-13. El departamento de marketing ha notado que la imagen del primer curso, el de JavaScript Moderno, tiene una tasa de clics muy baja. Han proporcionado una nueva imagen en la ruta 'img/hacer4.jpg' que debemos usar como reemplazo. Actualiza la imagen de ese curso en específico.
-14. El botón de "Más Información" en la tarjeta premium tiene un texto poco llamativo. Cámbialo por 'Ver Detalles Premium'.
 15. Partiendo de la primera tarjeta de curso, localiza y trabaja sobre su tarjeta vecina, la que le sigue inmediatamente.
 16. El botón en la tarjeta premium es nuestro punto de partida. Desde él, navega por el DOM hacia arriba hasta encontrar el contenedor que agrupa toda su información (un div con la clase 'info').
 17. Encuentra el título `h2` que se encuentra dentro de la tarjeta del curso premium.
