@@ -1,11 +1,3 @@
-15. Partiendo de la primera tarjeta de curso, localiza y trabaja sobre su tarjeta vecina, la que le sigue inmediatamente.
-16. El botón en la tarjeta premium es nuestro punto de partida. Desde él, navega por el DOM hacia arriba hasta encontrar el contenedor que agrupa toda su información (un div con la clase 'info').
-17. Encuentra el título `h2` que se encuentra dentro de la tarjeta del curso premium.
-18. Partiendo desde el pie de página (footer), localiza el contenedor principal que está justo antes y aplícale un borde de 2px de color rojo para destacarlo.
-19. Comienza en el primer `div` de información (`.info`). Desde ahí, sube a su elemento padre (la tarjeta) y, una vez ahí, desciende para encontrar el primer elemento hijo de esa tarjeta, que debería ser la imagen.
-20. Localiza el segundo enlace del menú. Tu objetivo es, partiendo de él, llegar hasta el título `<h1>` principal de la cabecera y cambiar su color a naranja.
-21. El botón de la tarjeta premium debe tener una funcionalidad. Haz que, al pulsarlo, se dispare una alerta del navegador con el mensaje: 'Accediendo a información exclusiva para miembros premium'.
-22. El formulario de contacto debe ser funcional. Evita que la página se recargue al enviarlo y, en su lugar, captura los valores de los campos de nombre y mensaje y muéstralos en la consola.
 23. Hay información oculta en la tarjeta del curso de React. Implementa una funcionalidad para que, al hacer clic en el título de ESE curso, el párrafo oculto se vuelva visible.
 24. Para estandarizar los títulos de los cursos, recorre todos los `h2` que están dentro de las tarjetas y añade el prefijo "[CURSO]" al principio de su texto.
 25. Para mejorar la legibilidad, se ha decidido agrupar visualmente los cursos por temática. Tu objetivo es encontrar todas las tarjetas de cursos que pertenezcan a la categoría 'Desarrollo Web'. Una vez identificadas, debes aplicarles un ligero fondo de color (#f0f0f0) para que se distingan del resto.
