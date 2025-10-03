@@ -1,0 +1,1 @@
+document.querySelector("#formulario-seccion").querySelector("textarea").placeholder = `Escribe aquí tu consulta detallada.`;

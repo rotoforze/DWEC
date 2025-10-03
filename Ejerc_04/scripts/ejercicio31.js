@@ -1,0 +1,1 @@
+document.querySelectorAll(".card")[2].querySelector(".oculto").textContent += ` ¡Oferta especial!`;
