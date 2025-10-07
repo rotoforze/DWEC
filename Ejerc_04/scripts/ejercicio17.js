@@ -1,1 +1,1 @@
-console.log(document.querySelector(".premium").querySelector("h2"));
+console.log(document.querySelector(".premium h2"));
