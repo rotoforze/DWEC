@@ -11,8 +11,10 @@ function cambiarImagenPrincipal(indice) {
         
         // comprobamos si existe la miniatura
         if (miniatura) {
+            const nuevaMiniatura = miniatura.getAttribute('src');
+            miniatura.setAttribute('src', document.querySelector("#imagen-principal").getAttribute('src'));
             // establecemos el atributo src por el de la miniatura del indice
-            document.querySelector("#imagen-principal").setAttribute('src', miniatura.getAttribute('src'));
+            document.querySelector("#imagen-principal").setAttribute('src', nuevaMiniatura);
             // lo resaltamos para indicar visualmente cual es
             resaltarMiniatura(indice);
             console.info(`Se ha cambiado la imagen por la de ${indice}`)
