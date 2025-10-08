@@ -13,6 +13,8 @@ function cambiarImagenPrincipal(indice) {
         if (miniatura) {
             // establecemos el atributo src por el de la miniatura del indice
             document.querySelector("#imagen-principal").setAttribute('src', miniatura.getAttribute('src'));
+            // lo resaltamos para indicar visualmente cual es
+            resaltarMiniatura(indice);
             console.info(`Se ha cambiado la imagen por la de ${indice}`)
         }else {
             console.warn(`No hay un elemento válido en ${indice}`);
@@ -24,16 +26,13 @@ function cambiarImagenPrincipal(indice) {
 }
 
 function resaltarMiniatura(indice) {
-    // primero eliminamos a los elementos que tengan la clase resaltado la misma
-    document.querySelectorAll(".resaltado").forEach((elemento) => elemento.classList.remove("resaltado"));
+    // primero eliminamos a los elementos que tengan la clase activa la misma
+    document.querySelectorAll(".activa").forEach((elemento) => elemento.classList.remove("activa"));
     
-    // añadimos la clase resaltado a la indicada
-    miniaturas[indice].classList.add("resaltado");
+    // añadimos la clase activa a la indicada
+    miniaturas[indice].classList.add("activa");
 }
 
 miniaturas.forEach((miniatura, indice) => {
-    miniatura.addEventListener('click', () => {
-        cambiarImagenPrincipal(indice);
-        resaltarMiniatura(indice);
-    });
+    miniatura.addEventListener('click', () => cambiarImagenPrincipal(indice));
 });
