@@ -1,9 +1,5 @@
-let cursosAdmitidos = [];
 document.querySelectorAll('.card').forEach((curso) => {
-    if (!curso.classList.contains('.premium')) {
-        cursosAdmitidos.push(curso);
+    if (!curso.classList.contains('premium')) {
+        curso.classList.add('borde-negro-punteado');
     }
-});
-cursosAdmitidos.map((curso) => {
-    curso.style.border = '2px dotted black';
 });

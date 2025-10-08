@@ -63,3 +63,18 @@
      font-size: 0.9em;
      color: #777;
  }
+ .titulo-grande {
+    font-size: 4em;
+ }
+ .borde-rojo {
+    border: 2px red solid;
+ }
+ .letra-naranja {
+    color: orange;
+ }
+ .fondo-gris {
+    background-color: #f0f0f0;
+ }
+ .borde-negro-punteado {
+    border: 2px black dotted;
+ }

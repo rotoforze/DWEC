@@ -1,3 +1,3 @@
 document.querySelectorAll(".card img").forEach((imagen) => {
-    imagen.className = 'imagen-curso';
+    imagen.classList.add = 'imagen-curso';
 });

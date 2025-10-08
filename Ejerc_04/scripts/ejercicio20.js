@@ -1,1 +1,1 @@
-document.querySelectorAll(".navegacion a")[1].parentElement.parentElement.firstElementChild.style.color = 'orange';
+document.querySelectorAll(".navegacion a")[1].parentElement.parentElement.firstElementChild.classList.add('letra-naranja');

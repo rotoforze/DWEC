@@ -1,1 +1,1 @@
-document.querySelector("#footer-principal").previousElementSibling.style.border = '2px red solid';
+document.querySelector("#footer-principal").previousElementSibling.classList.add('borde-rojo');
