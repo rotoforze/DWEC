@@ -17,11 +17,13 @@ const lorems = [
     'Iure commodi amet nulla, quibusdam earum dolor ullam enim, aut quam repellendus architecto? Expedita vero quae temporibus mollitia voluptatibus. Fugiat delectus consequuntur obcaecati alias tempora minima officia harum et odit?'
 ]
 function generarLorem(n = 1) {
+    const fragment = new DocumentFragment();
+    for (i = 0; i<n; i++) {
+        fragment.appendChild(nuevoP(lorems[Math.floor(Math.random()*lorems.length)]));
+    }
     const resultado = document.querySelector('#resultado');
     resultado.innerHTML = "";
-    for (i = 0; i<n; i++) {
-        resultado.appendChild(nuevoP(lorems[Math.floor(Math.random()*lorems.length)]));
-    }
+    resultado.appendChild(fragment);
 }
 function nuevoP(texto) {
     const p = document.createElement('p');
