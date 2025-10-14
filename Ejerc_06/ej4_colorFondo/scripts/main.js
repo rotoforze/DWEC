@@ -1,5 +1,3 @@
-document.querySelectorAll('#color').forEach((color) => {
-    color.addEventListener('click', () => {
-        document.querySelector('body').style.backgroundColor = color.style.backgroundColor;
-    });
-});
+document.querySelector('#colores').addEventListener('click', (Event) => {
+    document.querySelector('body').style.backgroundColor = Event.target.style.backgroundColor;
+})
