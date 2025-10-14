@@ -5,8 +5,10 @@ preguntas.forEach((pregunta) => {
     });
 });
 function revelarRespuesta(elemento) {
-    ocultarTodasLasRespuestas();
-    elemento.nextElementSibling.classList.toggle('oculto');
+    if (elemento.nextElementSibling.classList.contains('oculto')) {
+        ocultarTodasLasRespuestas();
+        elemento.nextElementSibling.classList.toggle('oculto');
+    } else ocultarTodasLasRespuestas();
 }
 function ocultarTodasLasRespuestas() {
     preguntas.forEach((pregunta) => {

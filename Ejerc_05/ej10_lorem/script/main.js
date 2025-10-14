@@ -17,6 +17,10 @@ const lorems = [
     'Iure commodi amet nulla, quibusdam earum dolor ullam enim, aut quam repellendus architecto? Expedita vero quae temporibus mollitia voluptatibus. Fugiat delectus consequuntur obcaecati alias tempora minima officia harum et odit?'
 ]
 function generarLorem(n = 1) {
+    if (n <= 0) {
+        window.alert('Número de parrafos inválido');
+        return;
+    }
     const fragment = new DocumentFragment();
     for (i = 0; i<n; i++) {
         fragment.appendChild(nuevoP(lorems[Math.floor(Math.random()*lorems.length)]));
