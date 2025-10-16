@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrastar y Soltar</title>
+    <style>
+        .contenedor {
+            width: 50dvw;
+            height: 50dvh;
+            background-color: red;
+        }
+        .arrastrable {
+            width: 10dvw;
+            height: 10dvh;
+            background-color: green;
+            /* Es importante que la posicion sea relativa a su padre */
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="arrastrable"></div>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
