@@ -25,7 +25,7 @@ const estudiantes = [
         correo: 'adrian@clases.edu'
     }
 ];
-
+// todo esto mete los valores del array en la tabla
 estudiantes.forEach((estudiante) => {
     document.querySelector('table').appendChild(nuevaFila(estudiante));
 });
@@ -41,16 +41,23 @@ function nuevaCelda(texto) {
     td.textContent = texto;
     return td;
 }
+
+// ahora por cada td en el documento vamos a ir comprobando si hacen doble click encima.
+// Al hacerlo, debemos reemplazar el elemento td por un input de tipo texto
+// cone el valor del td, y que al perder el foco, vuelva a ser un td con el nuevo valor
 document.querySelectorAll('td').forEach((celda) => {
     celda.addEventListener('dblclick', () => {
+        // creamos el elemento input, y le damos el valor de la celda
         const nuevoInput = document.createElement('input');
         nuevoInput.type = 'text';
         nuevoInput.value = celda.textContent;
+        // cuando pierda el foco lo volvemos a reemplazar
         nuevoInput.addEventListener('blur', () => {
             celda.textContent = nuevoInput.value;
-            nuevoInput.parentElement.replaceChild(celda, nuevoInput)
+            // reemplazamos
+            nuevoInput.parentElement.replaceChild(celda, nuevoInput);
         })
-        celda.parentNode.replaceChild(nuevoInput, celda)
-        console.log('hola')
+        // reemplazamos la celda con el nuevo input
+        celda.parentNode.replaceChild(nuevoInput, celda);
     });
 });
