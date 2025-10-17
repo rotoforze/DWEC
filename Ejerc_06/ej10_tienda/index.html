@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+    <style>
+        .tienda,
+        .carrito-contenedor {
+            border: 2px solid black;
+            width: fit-content;
+            padding: 1em;
+            margin: 20px;
+        }
+
+        .productos {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .producto {
+            border: 1px dotted black;
+            margin-bottom: 1em;
+            padding: 1em;
+        }
+
+        .carrito-info {
+            border-bottom: 2px grey solid;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .producto-en-carrito {
+            border: 1px solid black;
+            margin: 10px;
+        }
+        .total {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tienda de hamburgesas</h1>
+    <div class="tienda">
+        <h2>Hamburgesas disponibles</h2>
+        <div class="productos">
+            <div class="producto">
+                <h3>BigMac</h3>
+                <p>Precio: <span class="precio">8.5</span>€</p>
+                <button>Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <h3>McPollo</h3>
+                <p>Precio: <span class="precio">9</span>€</p>
+                <button>Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <h3>Cuarto de Libra</h3>
+                <p>Precio: <span class="precio">8.5</span>€</p>
+                <button>Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <h3>McExtreme Bacon</h3>
+                <p>Precio: <span class="precio">11.75</span>€</p>
+                <button>Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <h3>Cheeseburger</h3>
+                <p>Precio: <span class="precio">1.45</span>€</p>
+                <button>Añadir al carrito</button>
+            </div>
+            <div class="producto">
+                <h3>McRoyale Deluxe</h3>
+                <p>Precio: <span class="precio">9.25</span>€</p>
+                <button>Añadir al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="carrito-contenedor">
+        <h2>Tu carrito</h2>
+        <div class="carrito">
+            <div class="carrito-info"></div>
+            </div>
+            <div class="total">
+                <h4>Total: </h4>
+                <h4 class="total-info">0.00</h4>
+                <h4>€</h4>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
