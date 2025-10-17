@@ -15,16 +15,7 @@ function eventoSubirEnBoton(boton) {
         return;
     }
 
-    const anterior = elementoAnterior.cloneNode(true);
-    ambosEventosAlBotonHijo(anterior);
-    const actual = boton.parentNode.cloneNode(true);
-    ambosEventosAlBotonHijo(actual);
-
-    const lista = boton.parentNode.parentNode;
-    // remplazamos el anterior con este
-    lista.replaceChild(actual, elementoAnterior);
-    // // ahora al revés
-    lista.replaceChild(anterior, boton.parentNode);
+    boton.parentNode.parentNode.insertBefore(boton.parentNode, elementoAnterior);
 }
 function eventoBajarEnBoton(boton) {
     const siguienteElemento = boton.parentNode.nextElementSibling;
@@ -33,18 +24,5 @@ function eventoBajarEnBoton(boton) {
         return;
     }
 
-    const siguiente = siguienteElemento.cloneNode(true);
-    ambosEventosAlBotonHijo(siguiente);
-    const actual = boton.parentNode.cloneNode(true);
-    ambosEventosAlBotonHijo(actual);
-
-    const lista = boton.parentNode.parentNode;
-    // remplazamos el anterior con este
-    lista.replaceChild(actual, siguienteElemento);
-    // // ahora al revés
-    lista.replaceChild(siguiente, boton.parentNode);
-}
-function ambosEventosAlBotonHijo(boton) {
-    boton.querySelector('.subir').addEventListener('click', () => eventoSubirEnBoton(boton.querySelector('.subir')));
-    boton.querySelector('.bajar').addEventListener('click', () => eventoBajarEnBoton(boton.querySelector('.bajar')));
+    boton.parentNode.parentNode.insertBefore(siguienteElemento, boton.parentNode);
 }
