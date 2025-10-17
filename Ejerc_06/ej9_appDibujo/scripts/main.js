@@ -5,7 +5,6 @@ for (let i = 0; i<1600;i++) {
     div.addEventListener('mousedown', () => isDrawing = true);
     div.addEventListener('mouseup', () => isDrawing = false);
     div.addEventListener('mouseover', () => {
-        console.log(isDrawing);
         if (isDrawing) {
             div.style.backgroundColor = 'black'}
         }
