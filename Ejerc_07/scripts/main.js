@@ -7,15 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#outer-box').addEventListener('click', (Event) => {
         if (Event.target === Event.currentTarget) Event.stopPropagation();
         console.log(Event.target.id, Event.currentTarget.id);
-        quitarColor();
         Event.target.style.backgroundColor = 'coral';
     });
-
-    function quitarColor() {
-        document.querySelectorAll('.box').forEach((cont) => {
-            cont.style.backgroundColor = '';
-        });
-    }
 
     // --- Solución Ejercicio 2 ---
     document.querySelector('#test-link').addEventListener('click', (e) => {
