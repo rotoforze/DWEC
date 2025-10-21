@@ -5,15 +5,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Solución Ejercicio 1 y 4 ---
     document.querySelector('#outer-box').addEventListener('click', (Event) => {
-        //Event.stopPropagation();
+        if (Event.target === Event.currentTarget) Event.stopPropagation();
         console.log(Event.target.id, Event.currentTarget.id);
+        quitarColor();
         Event.target.style.backgroundColor = 'coral';
     });
+
+    function quitarColor() {
+        document.querySelectorAll('.box').forEach((cont) => {
+            cont.style.backgroundColor = '';
+        });
+    }
 
     // --- Solución Ejercicio 2 ---
     document.querySelector('#test-link').addEventListener('click', (e) => {
         e.preventDefault();
-        window.alert('Navegación prevenida');
+        console.log('Navegación prevenida');
     });
 
     // --- Solución Ejercicio 3 ---
@@ -32,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             left: 0,
             behavior: "smooth"
         });
-    })
+    });
 
     // --- Solución Ejercicio 5 ---
     
