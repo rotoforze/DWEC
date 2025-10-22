@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Solución Ejercicio 1 y 4 ---
     document.querySelector('#outer-box').addEventListener('click', (Event) => {
-        //Event.stopPropagation();
         console.log(Event.target.id, Event.currentTarget.id);
         Event.target.style.backgroundColor = 'coral';
     });
