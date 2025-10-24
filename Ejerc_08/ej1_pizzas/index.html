@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pedidos de pizza!</title>
+</head>
+
+<body>
+    <form name="pedido" id="pedido" onsubmit="event.preventDefault(); validar();">
+        <label for="tamanio">Tamaño de la pizza</label><br>
+        <input type="radio" name="tamanio" id="Pequenia" checked value="pequenia">
+        <label for="Pequenia">Pequeña -> 10€</label><br>
+        <input type="radio" name="tamanio" id="Mediana" value="mediana">
+        <label for="Mediana">Mediana -> 12€</label><br>
+        <input type="radio" name="tamanio" id="Grande" value="grande">
+        <label for="Grande">Grande -> 15€</label><br><br>
+
+        <label>Extras</label><br>
+        <label for="queso">Extra queso</label>
+        <input type="checkbox" name="extra" id="queso" value="queso"><br>
+        <label for="peperoni">Extra peperoni</label>
+        <input type="checkbox" name="extra" id="peperoni" value="peperoni"><br>
+        <label for="champiniones">Extra champiñones</label>
+        <input type="checkbox" name="extra" id="champiniones" value="champiniones"><br>
+        <label for="pinia">Extra piña</label>
+        <input type="checkbox" name="extra" id="pinia" value="pinia"><br><br>
+
+        <label for="tipoMasa">Tipo de Masa</label><br>
+        <select name="tipoMasa" id="tipoMasa">
+            <option value="fina">fina</option>
+            <option value="normal">normal</option>
+            <option value="rellenaQueso">rellena de queso</option>
+        </select><br><br>
+        <input type="submit" value="Realizar pedido">
+    </form>
+    <h1>Total: <span class="total">0</span>€</h1>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
