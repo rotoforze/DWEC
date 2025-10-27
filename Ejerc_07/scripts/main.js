@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Solución Ejercicio 1 y 4 ---
     document.querySelector('#outer-box').addEventListener('click', (Event) => {
+<<<<<<< HEAD
+=======
+        if (Event.target === Event.currentTarget) Event.stopPropagation();
+>>>>>>> d2cea24e4a027c6a88c6ec62ee0f834f57184c62
         console.log(Event.target.id, Event.currentTarget.id);
         Event.target.style.backgroundColor = 'coral';
     });
@@ -12,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Solución Ejercicio 2 ---
     document.querySelector('#test-link').addEventListener('click', (e) => {
         e.preventDefault();
-        window.alert('Navegación prevenida');
+        console.log('Navegación prevenida');
     });
 
     // --- Solución Ejercicio 3 ---
@@ -31,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             left: 0,
             behavior: "smooth"
         });
-    })
+    });
 
     // --- Solución Ejercicio 5 ---
     
