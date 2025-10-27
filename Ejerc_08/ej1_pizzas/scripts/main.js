@@ -55,4 +55,5 @@ function total(pedido) {
     }
     total += precios.tipoMasa[pedido.tipoMasa];
     document.querySelector('.total').textContent = total;
+    window.alert(JSON.stringify(pedido))
 }
