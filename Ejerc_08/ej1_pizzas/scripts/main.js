@@ -27,6 +27,7 @@ const plantillaPedido = {
     tipoMasa: undefined
 };
 
+
 function validar() {
     let nuevoPedido = plantillaPedido;
 
@@ -41,11 +42,10 @@ function validar() {
     nuevoPedido.tipoMasa = masa;
 
     total(nuevoPedido);
-    
+    return nuevoPedido;
 }
 
 function total(pedido) {
-    console.log(pedido)
     let total = 0;
     total += precios.tamanios[pedido.tamanio];
     for (const extra in pedido.extras) {
@@ -55,5 +55,18 @@ function total(pedido) {
     }
     total += precios.tipoMasa[pedido.tipoMasa];
     document.querySelector('.total').textContent = total;
-    window.alert(JSON.stringify(pedido))
 }
+
+function mostrarPedido(pedido) {
+    window.alert(`Tamaño -> ${pedido.tamanio}
+    Extras -> ${JSON.stringify(pedido.extras)}
+    Masa -> ${pedido.tipoMasa}`)
+}
+
+document.querySelectorAll('input').forEach((input) => {
+    input.addEventListener('change', () => validar());
+});
+
+document.querySelector('select').addEventListener('change', () => validar())
+
+validar();

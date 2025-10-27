@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <form name="pedido" id="pedido" onsubmit="event.preventDefault(); validar();">
+    <form name="pedido" id="pedido" onsubmit="event.preventDefault(); mostrarPedido(validar());">
         <label for="tamanio">Tamaño de la pizza</label><br>
         <input type="radio" name="tamanio" id="Pequenia" checked value="pequenia">
         <label for="Pequenia">Pequeña -> 10€</label><br>
