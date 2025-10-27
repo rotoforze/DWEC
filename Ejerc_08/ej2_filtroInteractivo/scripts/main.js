@@ -2,6 +2,8 @@ import { productos } from './datos/datos.js';
 import { mostrarListaProductos } from './creadorElementos.js';
 import { buscar } from './buscar.js';
 import { filtroCategoria } from './filtrarCategoria.js';
+import { filtrarPrecio } from './filtrarPrecios.js';
+import { ordenar } from './ordenar.js';
 
 const categorias = new Set();
 let precioMinimo = 999;
@@ -25,13 +27,34 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     // filtro de precio mínimo y máximo
+    const filtroPrecio = document.querySelector('#filtroPrecio');
+    filtroPrecio.min = precioMinimo;
+    filtroPrecio.max = precioMaximo;
+    filtroPrecio.value = precioMaximo
+
+    const precioMaxAcutal = document.querySelector('.precioMaxAcutal');
+    precioMaxAcutal.textContent = precioMaximo;
+    filtroPrecio.addEventListener('input', () => {
+        precioMaxAcutal.textContent = filtroPrecio.value;
+        cargarProductos(filtrarPrecio(filtroPrecio.value, productos))
+    })
 
     // ordenar array
+    document.filtros.filtroOrden.forEach((filtro) => {
+        filtro.addEventListener('input', () => {
+            cargarProductos(ordenar(filtro.id, productos));
+        })
+    })
 });
 
 function cargarProductos(productos) {
     const contenedorClon = document.querySelector('.lista-productos').cloneNode();
     document.querySelector('.lista-productos').parentElement.replaceChild(contenedorClon, document.querySelector('.lista-productos'));
+    if (productos.length <= 0) {
+        const mensajeError = document.createElement('h1');
+        mensajeError.textContent = '¡No hay productos que cumplan los criterios!';
+        contenedorClon.appendChild(mensajeError);
+    }
     productos.forEach((producto) => {
         // meter lista
         contenedorClon.appendChild(mostrarListaProductos(producto));

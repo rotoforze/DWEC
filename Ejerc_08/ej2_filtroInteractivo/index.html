@@ -15,7 +15,7 @@
 
         <div class="row g-4">
             <div class="col-12 col-md-4">
-                <form onsubmit="event.preventDefault()" class="filtro p-4 border rounded bg-white shadow-sm">
+                <form name="filtros" onsubmit="event.preventDefault()" class="filtro p-4 border rounded bg-white shadow-sm">
                     <h5 class="mb-3">Filtros</h5>
 
                     <div class="mb-3">
@@ -32,7 +32,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="filtroPrecio" class="form-label">Rango de precios</label>
+                        <label for="filtroPrecio" class="form-label">Precio Máximo <span class="precioMaxAcutal"></span>€</label>
                         <input type="range" name="filtroPrecio" id="filtroPrecio" class="form-range">
                     </div>
 
@@ -40,15 +40,15 @@
                         <label class="form-label">Ordenar por:</label><br>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" name="filtroOrden" id="ordenPrecioASC">
-                            <label for="ordenPrecioASC" class="form-check-label">Precio 🔼</label>
+                            <label for="ordenPrecioASC" class="form-check-label" id="mayor">Precio 🔼</label>
                         </div>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" name="filtroOrden" id="ordenPrecioDESC">
-                            <label for="ordenPrecioDESC" class="form-check-label">Precio 🔽</label>
+                            <label for="ordenPrecioDESC" class="form-check-label" id="menor">Precio 🔽</label>
                         </div>
                         <div class="form-check">
                             <input type="radio" class="form-check-input" name="filtroOrden" id="ordenNombre">
-                            <label for="ordenNombre" class="form-check-label">Nombre (A-Z)</label>
+                            <label for="ordenNombre" class="form-check-label" id="alfabetico">Nombre (A-Z)</label>
                         </div>
                     </div>
                 </form>
