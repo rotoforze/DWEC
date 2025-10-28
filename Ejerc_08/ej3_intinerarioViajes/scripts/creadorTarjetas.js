@@ -11,6 +11,7 @@ export function creadorTarjetas(id, nombre, destino, precio,
     contenedor.appendChild(getElementoDuracionHoras(duracionHoras));
     contenedor.appendChild(getElementoTipo(tipo));
     contenedor.appendChild(getElementoImg(imagen));
+    contenedor.appendChild(getBotonAniadir());
     return contenedor;
 }
 
@@ -30,7 +31,7 @@ function getElementoDestino(destino) {
 
 function getElementoPrecio(precio) {
     const elemento = document.createElement('p');
-    elemento.textContent = `Precio de la actividad: ${precio}`;
+    elemento.textContent = `Precio de la actividad: ${precio}€`;
     elemento.classList.add('card-text', 'text-success', 'fw-semibold');
     return elemento;
 }
@@ -55,5 +56,12 @@ function getElementoImg(imagen) {
     elemento.setAttribute('width', 200);
     elemento.setAttribute('src', imagen);
     elemento.classList.add('card-img-top', 'rounded', 'mb-3', 'shadow-sm');
+    return elemento;
+}
+
+function getBotonAniadir() {
+    const elemento = document.createElement('button');
+    elemento.textContent = `Añadir al itinerario`;
+    elemento.classList.add('botonAniadir', 'rounded', 'mb-3', 'shadow-sm');
     return elemento;
 }

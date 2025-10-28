@@ -17,16 +17,18 @@
             </th>
         </tr>
         <tr>
-            <td class="bg-light p-4 align-top">
+            <td class="bg-light w-25 p-4 align-top">
                 <form name="filtros" class="d-flex flex-column flex-fill gap-3">
                     <label for="destinos" class="form-label fw-semibold">Destino</label>
-                    <select name="destinos" id="destinos" class="form-select"></select><br>
-
+                    <select name="destinos" id="destinos" class="form-select">
+                        <option value="all">Todos</option>
+                    </select><br>
+                        
                     <label for="tipoActividad" class="form-label fw-semibold">Tipo de actividad</label>
-                    <div class="listaTiposActividades border rounded p-2 bg-white shadow-sm"></div><br>
+                    <div class="listaTiposActividades text-start border rounded p-2 bg-white shadow-sm"></div><br>
                         
                     <label for="precioMaximo" class="form-label fw-semibold">
-                        Precio máximo <span class="precioActual text-primary fw-bold">0</span>€
+                        Precio máximo (<<span class="precioActual text-primary fw-bold">0</span>€)
                     </label>
                     <input type="range" name="precioMaximo" id="precioMaximo" class="form-range">
                 </form>
