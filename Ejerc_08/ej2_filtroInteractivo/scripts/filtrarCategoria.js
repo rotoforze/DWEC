@@ -3,7 +3,7 @@ export function filtroCategoria(categoria, productos) {
     if (categoria == 'all') return productos;
     return productos.filter((producto) => {
         if (producto.categoria.toLowerCase().includes(categoria.toLowerCase())) {
-            return categoria
+            return producto;
         }
     })
 }
