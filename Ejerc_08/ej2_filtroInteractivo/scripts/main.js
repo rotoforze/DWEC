@@ -1,9 +1,6 @@
 import { productos } from './datos/datos.js';
 import { mostrarListaProductos } from './creadorElementos.js';
-import { buscar } from './buscar.js';
-import { filtroCategoria } from './filtrarCategoria.js';
-import { filtrarPrecio } from './filtrarPrecios.js';
-import { ordenar } from './ordenar.js';
+import { filtrarProductos } from './filtrar.js';
 
 const categorias = new Set();
 let precioMinimo = 999;
@@ -11,38 +8,40 @@ let precioMaximo = -999;
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    cargarProductos(productos)
+    cargarProductos(productos);
 
     // poner todos los escuchadores de eventos
     // filtro de búsqueda por nombre
     const buscador = document.querySelector('#buscador');
     buscador.addEventListener('input', () => {
-        cargarProductos(buscar(buscador.value, productos));
+        cargarProductos(filtrarProductos(productos));
     })
 
     // filtro de categoría si no es todas
     const contenedorFiltroCategoria = document.querySelector('#filtroCategoria');
     contenedorFiltroCategoria.addEventListener('change', () => {
-        cargarProductos(filtroCategoria(contenedorFiltroCategoria.value, productos));
+        cargarProductos(filtrarProductos(productos));
     })
 
     // filtro de precio mínimo y máximo
     const filtroPrecio = document.querySelector('#filtroPrecio');
     filtroPrecio.min = precioMinimo;
     filtroPrecio.max = precioMaximo;
-    filtroPrecio.value = precioMaximo
+    filtroPrecio.value = precioMaximo;
 
     const precioMaxAcutal = document.querySelector('.precioMaxAcutal');
     precioMaxAcutal.textContent = precioMaximo;
     filtroPrecio.addEventListener('input', () => {
         precioMaxAcutal.textContent = filtroPrecio.value;
-        cargarProductos(filtrarPrecio(filtroPrecio.value, productos))
+        cargarProductos(filtrarProductos(productos));
     })
 
     // ordenar array
     document.filtros.filtroOrden.forEach((filtro) => {
         filtro.addEventListener('input', () => {
-            cargarProductos(ordenar(filtro.id, productos));
+            document.querySelector('.seleccionado').classList.remove('seleccionado');
+            filtro.classList.add('seleccionado');
+            cargarProductos(filtrarProductos(productos));
         })
     })
 });
