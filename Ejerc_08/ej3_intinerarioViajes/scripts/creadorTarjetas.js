@@ -1,3 +1,6 @@
+import { addNuevaActividad } from "./itinerario.js";
+import { recalcular, validar } from "./main.js";
+
 export function creadorTarjetas(id, nombre, destino, precio,
     duracionHoras, tipo, imagen) {
     // creamos cada parte de la tarjeta
@@ -11,7 +14,7 @@ export function creadorTarjetas(id, nombre, destino, precio,
     contenedor.appendChild(getElementoDuracionHoras(duracionHoras));
     contenedor.appendChild(getElementoTipo(tipo));
     contenedor.appendChild(getElementoImg(imagen));
-    contenedor.appendChild(getBotonAniadir());
+    contenedor.appendChild(getBotonAniadir(nombre, precio, duracionHoras));
     return contenedor;
 }
 
@@ -59,9 +62,14 @@ function getElementoImg(imagen) {
     return elemento;
 }
 
-function getBotonAniadir() {
+function getBotonAniadir(nombre, precio, duracionHoras) {
     const elemento = document.createElement('button');
     elemento.textContent = `Añadir al itinerario`;
     elemento.classList.add('botonAniadir', 'rounded', 'mb-3', 'shadow-sm');
+    elemento.addEventListener('click', () => {
+        document.querySelector('.listaItinerarios').appendChild(addNuevaActividad(nombre, precio, duracionHoras));
+        recalcular();
+        validar();
+    })
     return elemento;
 }

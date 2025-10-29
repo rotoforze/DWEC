@@ -1,7 +1,8 @@
-import filtroDestino from './filtros/filtroDestino.js'
-import filtroPrecio from './filtros/filtroPrecio.js'
+import { filtroDestino } from './filtros/filtroDestino.js';
+import { filtroPrecio } from './filtros/filtroPrecio.js';
+import { filtroTipos } from './filtros/filtroTipos.js';
 
-function filtrarActividades(listaActividades) {
+export function filtrarActividades(listaActividades) {
     // primero filtramos por destino
     listaActividades = filtroDestino(listaActividades);
     // luego filtramos por tipos

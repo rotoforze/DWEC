@@ -9,41 +9,106 @@
 </head>
 
 <body>
-<table class="table table-bordered border-3 table-hover align-middle text-center shadow-lg">
-    <tbody>
-        <tr class="table-primary">
-            <th colspan="3" class="fs-3 fw-bold text-uppercase text-center py-3">
-                VIAJES EL CORTE INGLÉS
-            </th>
-        </tr>
-        <tr>
-            <td class="bg-light w-25 p-4 align-top">
-                <form name="filtros" class="d-flex flex-column flex-fill gap-3">
-                    <label for="destinos" class="form-label fw-semibold">Destino</label>
-                    <select name="destinos" id="destinos" class="form-select">
-                        <option value="all">Todos</option>
-                    </select><br>
-                        
-                    <label for="tipoActividad" class="form-label fw-semibold">Tipo de actividad</label>
-                    <div class="listaTiposActividades text-start border rounded p-2 bg-white shadow-sm"></div><br>
-                        
-                    <label for="precioMaximo" class="form-label fw-semibold">
-                        Precio máximo (<<span class="precioActual text-primary fw-bold">0</span>€)
-                    </label>
-                    <input type="range" name="precioMaximo" id="precioMaximo" class="form-range">
-                </form>
-            </td>
-            <td class="p-4 bg-white">
-                <div class="listaActividades d-flex flex-wrap justify-content-center gap-3"></div>
-            </td>
-            <td class="bg-light p-4 text-muted text-center">
-                b
-            </td>
-        </tr>
-    </tbody>
-</table>
+    <table class="table table-bordered border-3 table-hover align-middle text-center shadow-lg">
+        <tbody>
+            <tr class="table-primary">
+                <th colspan="3" class="fs-3 fw-bold text-uppercase text-center py-3">
+                    VIAJES EL CORTE INGLÉS
+                </th>
+            </tr>
+            <tr>
+                <td class="bg-light w-25 p-4 align-top">
+                    <form name="filtros" class="d-flex flex-column flex-fill gap-3">
+                        <label for="destinos" class="form-label fw-semibold">Destino</label>
+                        <select name="destinos" id="destinos" class="form-select">
+                            <option value="all">Todos</option>
+                        </select><br>
 
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+                        <label for="tipoActividad" class="form-label fw-semibold">Tipo de actividad</label>
+                        <div class="listaTiposActividades text-start border rounded p-2 bg-white shadow-sm"></div><br>
+
+                        <label for="precioMaximo" class="form-label fw-semibold">
+                            Precio máximo (<<span class="precioActual text-primary fw-bold">0</span>€)
+                        </label>
+                        <input type="range" name="precioMaximo" id="precioMaximo" class="form-range">
+                    </form>
+                </td>
+                <td class="p-4 bg-white">
+                    <div class="listaActividades d-flex flex-wrap justify-content-center gap-3">
+
+                    </div>
+                </td>
+                <td class="bg-light w-25 p-4 align-top">
+                    <div class="d-flex flex-column flex-fill gap-3">
+                        <h6>Itinerario</h6>
+                        <p>¡No hay actividades añadidas!</p>
+                        <table class="listaItinerarios"></table>
+                    </div>
+                    <div class="container my-5">
+                        <div class="resumenItinerarios card shadow-sm border-0">
+                            <div class="card-body">
+                                <h6 class="card-title text-uppercase text-secondary">Resumen</h6>
+                                <p class="mb-2">Coste total: <span class="precioTotal fw-bold text-primary">0</span> €
+                                </p>
+                                <p class="mb-2">Duración total: <span class="duracionTotal fw-bold">0</span> horas</p>
+                                <p class="mb-0">Nº actividades: <span class="totalActividades fw-bold">0</span></p>
+                            </div>
+
+                            <form name="reserva" novalidate class="reserva p-4 border rounded bg-white shadow-sm">
+                                <h5 class="mb-3">Formulario de Reserva</h5>
+
+                                <div class="mb-3">
+                                    <label for="nombreCompleto" class="form-label">Nombre completo</label>
+                                    <input type="text" name="nombreCompleto" id="nombreCompleto" class="form-control"
+                                        placeholder="Nombre completo..." required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Correo electrónico</label>
+                                    <input type="email" name="email" id="email" class="form-control"
+                                        placeholder="alguien@correo.es" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="fechaInicio" class="form-label">Fecha de inicio</label>
+                                    <input type="date" name="fechaInicio" id="fechaInicio" class="form-control" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="codDescuento" class="form-label">Código de descuento</label>
+                                    <input type="text" name="codDescuento" id="codDescuento"
+                                        class="form-control text-center" placeholder="XXXXXX" maxlength="6">
+                                </div>
+
+                                <div class="form-check mb-3">
+                                    <input type="checkbox" name="seguroViaje" id="seguroViaje" class="form-check-input">
+                                    <label for="seguroViaje" class="form-check-label">Incluir seguro de
+                                        viaje</label>
+                                </div>
+
+                                <div class="d-grid">
+                                    <input type="submit" value="Confirmar reserva" class="btn btn-primary">
+                                </div>
+
+                                <div class="erroresForm mt-3 text-danger small">
+                                    <div class="errorItinerariosVacios" hidden>No hay actividades selecionadas!</div>
+                                    <div class="errorNombre" hidden>Falta el nombre</div>
+                                    <div class="errorCorreo" hidden>Falta el correo o no es válido</div>
+                                    <div class="errorFecha" hidden>¡La fecha no es válida! Es anterior a la actual o no es correcta.</div>
+                                    <div class="errorCodigo" hidden>El código promocional no es válido</div>
+                                    <div class="errorSeguro" hidden>¡Debes incluir el seguro de viaje!</div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="./scripts/main.js"></script>
 </body>
 

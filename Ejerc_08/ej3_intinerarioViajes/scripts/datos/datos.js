@@ -11,7 +11,7 @@ export const datos = [
   {
     id: 2,
     nombre: "Clase de cocina japonesa",
-    destino: "Tokio",
+    destino: "Japón",
     precio: 70,
     duracionHoras: 3,
     tipo: "Gastronómico",
@@ -20,7 +20,7 @@ export const datos = [
   {
     id: 3,
     nombre: "Paseo en góndola por los canales",
-    destino: "Venecia",
+    destino: "Italia",
     precio: 60,
     duracionHoras: 1,
     tipo: "Cultural",
@@ -37,8 +37,8 @@ export const datos = [
   },
   {
     id: 5,
-    nombre: "Ruta de senderismo en Machu Picchu",
-    destino: "Perú",
+    nombre: "Noche en un bungaloo en la sabana",
+    destino: "Tanzania",
     precio: 180,
     duracionHoras: 8,
     tipo: "Aventura",
@@ -74,7 +74,7 @@ export const datos = [
   {
     id: 9,
     nombre: "Visita al Museo del Prado",
-    destino: "Madrid",
+    destino: "España",
     precio: 25,
     duracionHoras: 2,
     tipo: "Cultural",
@@ -83,7 +83,7 @@ export const datos = [
   {
     id: 10,
     nombre: "Tour de tapas por el centro histórico",
-    destino: "Sevilla",
+    destino: "España",
     precio: 50,
     duracionHoras: 3,
     tipo: "Gastronómico",
@@ -91,8 +91,8 @@ export const datos = [
   },
   {
     id: 11,
-    nombre: "Buceo en la Gran Barrera de Coral",
-    destino: "Australia",
+    nombre: "Visita al museo",
+    destino: "Países Bajos",
     precio: 200,
     duracionHoras: 4,
     tipo: "Aventura",
@@ -119,7 +119,7 @@ export const datos = [
   {
     id: 14,
     nombre: "Tour histórico por el Coliseo Romano",
-    destino: "Roma",
+    destino: "Italia",
     precio: 55,
     duracionHoras: 2,
     tipo: "Cultural",
@@ -127,8 +127,8 @@ export const datos = [
   },
   {
     id: 15,
-    nombre: "Clase de tango en Buenos Aires",
-    destino: "Argentina",
+    nombre: "Clase de cocina",
+    destino: "Indonesia",
     precio: 35,
     duracionHoras: 2,
     tipo: "Cultural",
