@@ -7,8 +7,7 @@ function actualizar() {
     document.querySelector('.posicionVentana').textContent = `${ancho} x ${alto}`;
     document.querySelector('.resolucionVentana').textContent = `${screen.width} x ${screen.height}`;
     document.querySelector('.resolucionPantalla').textContent = `${screen.availWidth} x ${screen.availHeight}`;
-
-    document.querySelector('.conexion').style.backgroundColor = navigator.online ? 'red' : 'green';
+    document.querySelector('.conexion').style.backgroundColor = navigator.onLine ? 'green' : 'red';
 }
 
 window.addEventListener('resize', actualizar);
