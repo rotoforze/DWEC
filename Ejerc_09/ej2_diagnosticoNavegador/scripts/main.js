@@ -8,9 +8,7 @@ function actualizar() {
     document.querySelector('.resolucionVentana').textContent = `${screen.width} x ${screen.height}`;
     document.querySelector('.resolucionPantalla').textContent = `${screen.availWidth} x ${screen.availHeight}`;
 
-    if (navigator.onLine) {
-        document.querySelector('.conexion').style.backgroundColor = 'green';
-    }else document.querySelector('.conexion').style.backgroundColor = 'red';
+    document.querySelector('.conexion').style.backgroundColor = navigator.online ? 'red' : 'green';
 }
 
 window.addEventListener('resize', actualizar);

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popup</title>
+</head>
+
+<body>
+    <p>Este página es un popup</p>
+    <button onclick="window.close();">Cerrar</button>
+    <script>       
+        window.opener.document.querySelector('.mensaje').textContent = 'SALUDO DESDE EL POPUP'
+    </script>
+</body>
+
+</html>
