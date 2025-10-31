@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de progreso de Scroll y Botón de volver arriba</title>
+    <style>
+        progress {
+            position: sticky;
+            top: 0;
+            width: 100%;
+        }
+        button {
+            position: sticky;
+            top: 90%;
+            left: 85%;
+            opacity: 0;
+            max-height: 0;
+            transition: all 0.5s ease;
+        }
+        button.invisible {
+            max-height: 100%;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <progress class="barra" value="0" min="0"></progress>
+    <button class="volver">Volver arriba</button>
+    <div>
+        <h1>titulo</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, provident illum. Libero ex velit facilis
+            inventore, esse perferendis dolorem cumque illo obcaecati accusantium adipisci, itaque voluptate. Accusamus
+            ratione nobis molestiae.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ipsa itaque deserunt repellat placeat voluptatum
+            nostrum fugiat explicabo harum obcaecati, ratione ex corrupti aliquid quibusdam at, iusto, est reprehenderit
+            saepe?</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, impedit accusantium veritatis, ipsa non
+            molestias similique dolorum esse exercitationem hic blanditiis excepturi suscipit perspiciatis labore fugiat
+            nam voluptatem debitis. Minus.</p>
+    </div>
+
+    <div>
+        <h1>titulo</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis corrupti, doloribus harum ipsa id sunt
+            dolores a vel, illo doloremque eum quisquam assumenda repellat odio, illum inventore labore error
+            perferendis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem sit magni officia eligendi a odio,
+            nostrum earum animi incidunt cum nulla explicabo rem molestiae aliquid! Aut aliquid debitis maxime vel.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis at iusto placeat necessitatibus magni,
+            illo deserunt cupiditate, eaque, minima architecto quo unde dolorum quas laborum illum repellendus!
+            Voluptate, iure ut.</p>
+    </div>
+
+    <div>
+        <h1>titulo</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ut voluptatum saepe, eligendi consequatur,
+            assumenda autem tempora incidunt ipsum qui molestias alias modi optio. Veritatis eius suscipit similique
+            nostrum corrupti.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi omnis dolores cum odio iusto repudiandae
+            tenetur quidem libero nostrum culpa architecto debitis natus voluptas, fuga error provident impedit corrupti
+            veritatis.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam veniam ratione consequatur laudantium
+            suscipit quaerat eius totam quam. Quaerat atque suscipit doloremque sunt minus, itaque aliquam commodi iure
+            quod voluptatem.</p>
+    </div>
+
+    <div>
+        <h1>titulo</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, error modi repellendus optio quod omnis.
+            Natus cum facere inventore, voluptatibus ratione quibusdam nesciunt tenetur sit aliquam! Sunt eum doloremque
+            quas.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo ad molestias magni consectetur unde
+            excepturi harum ipsam maxime quis quas porro nam vero, inventore adipisci corrupti magnam officiis
+            exercitationem cupiditate.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat, libero velit beatae similique unde
+            voluptas adipisci excepturi non, tempora reiciendis ut cum eum quam nesciunt exercitationem blanditiis
+            voluptatum eius consequuntur!</p>
+    </div>
+
+    <div>
+        <h1>titulo</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias sequi, ratione quis voluptatem nesciunt,
+            possimus facere, odit architecto maiores ullam itaque accusamus quae! Ad beatae nam eveniet officiis,
+            asperiores autem.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit culpa ratione, atque optio quis
+            voluptatibus dicta minima autem vero excepturi. Quidem illo id earum laudantium doloremque, fugit quibusdam
+            ipsam fugiat.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni ea in ducimus culpa cupiditate quas labore
+            odio tempore dicta ab aliquid exercitationem fugiat suscipit sapiente atque amet, voluptatem doloremque
+            laborum!</p>
+    </div>
+
+    <div>
+        <h1>titulo</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat earum, dolorem, asperiores numquam harum
+            enim dolores ab nisi a magnam itaque illo labore odit corrupti nam aliquid voluptatem. Quae, incidunt?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aspernatur, ratione temporibus voluptatem
+            exercitationem cum doloremque ex voluptatibus sed nulla totam dolore nobis quam itaque incidunt animi earum
+            aut? Alias.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi ex tenetur rem hic impedit corporis nemo
+            nihil ratione molestias, cumque neque corrupti itaque veritatis voluptate deleniti blanditiis voluptatem
+            aperiam porro.</p>
+    </div>
+
+    <div>
+        <h1>titulo</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi at repellat illum laboriosam. Eos ut
+            tempora recusandae, velit fugit assumenda mollitia laborum doloribus omnis aut ducimus, eaque ullam nisi
+            est.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio illum laudantium eius repudiandae minus
+            soluta et necessitatibus! Quae doloribus eaque id quod! Sit veniam consequuntur natus rerum? Accusantium,
+            illum! Molestiae.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis voluptatem consequuntur quasi nam magni
+            animi, quisquam soluta dolorum impedit quidem, delectus distinctio beatae doloremque illum quo fugit velit
+            ad magnam.</p>
+    </div>
+
+    <div>
+        <h1>titulo</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit vel accusantium numquam architecto illo earum
+            excepturi rem quam eligendi esse dolore nisi, vero odio corrupti eum voluptas non hic placeat?</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae modi officia qui omnis repudiandae, repellat
+            minima autem amet illum! At voluptas, mollitia dolore aperiam architecto cum ad neque consectetur optio.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor saepe minus eveniet eius rem officiis nam
+            modi aliquid nobis molestias qui, labore cum laudantium facere dolorum voluptas expedita, minima veritatis.
+        </p>
+    </div>
+
+    <div>
+        <h1>titulo</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, ut? Dicta maxime excepturi iusto impedit
+            sapiente voluptatem totam provident! Vero, error repellat? Sint facere ut expedita aliquid reiciendis,
+            doloremque qui!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum eveniet tempora a beatae obcaecati dolorem,
+            doloribus aliquid atque praesentium distinctio laborum accusamus sequi illum rem natus tempore cum.
+            Voluptatum, natus?</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur eius atque dolorum facilis, quasi ex
+            enim error quis sunt quo ipsum molestias voluptas! Autem, in esse maiores voluptatum corporis nihil!</p>
+    </div>
+
+    <div>
+        <h1>titulo</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea repellat, soluta quia sunt harum beatae enim id.
+            Similique quos laborum dolor voluptatibus vel perferendis repellendus repellat praesentium unde quo.
+            Praesentium.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, unde! Velit ad quos voluptates ratione! Unde
+            excepturi at ipsum ea officia, maiores dolore voluptate fugit perspiciatis consectetur dolor error! Laborum?
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, accusamus eius. Doloribus rem laboriosam
+            placeat molestias nihil enim saepe unde deleniti sed aspernatur, tenetur ducimus aliquid exercitationem
+            officia. Illo, cupiditate.</p>
+    </div>
+
+    <div>
+        <h1>titulo</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius sunt alias laborum natus numquam voluptate,
+            explicabo sequi, accusamus dicta saepe sapiente voluptatum at consequuntur, nostrum laboriosam aspernatur
+            veniam nesciunt? Corporis.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum libero dolor ex consectetur voluptas quibusdam
+            excepturi accusantium cumque unde qui est, natus deserunt necessitatibus modi sed, quaerat saepe
+            perspiciatis porro.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A dolorum voluptas sunt perspiciatis deserunt
+            similique beatae ratione adipisci, error delectus perferendis! Id minima illo cupiditate corrupti, earum
+            ullam deleniti unde?</p>
+    </div>
+
+    <div>
+        <h1>titulo</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, error perferendis dolor ipsum fugit a deleniti
+            laudantium sapiente recusandae optio in praesentium ratione perspiciatis inventore quidem cupiditate, eaque
+            quis porro.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, nemo ducimus magni nobis, fugiat iure
+            tempora suscipit mollitia tenetur consequuntur quae aperiam magnam neque quas optio blanditiis beatae autem.
+            Ex.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis quam, voluptatum nostrum laboriosam
+            adipisci cum animi cupiditate optio qui fugit! Ipsam fugit quae tempore fugiat debitis asperiores deserunt
+            temporibus repellat?</p>
+    </div>
+
+    <div>
+        <h1>titulo</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id modi optio vero excepturi atque placeat, alias
+            perspiciatis! Accusantium dolorem impedit quaerat reprehenderit architecto, sed consequatur dolore fugiat
+            autem, ducimus error?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nemo excepturi similique dolor? Perspiciatis
+            placeat sequi culpa magnam labore? Aperiam deserunt porro quae omnis consequuntur harum recusandae
+            reprehenderit voluptatibus rem.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum unde totam molestiae asperiores saepe, in
+            consectetur debitis eius ab necessitatibus eaque quo nulla at. Natus est cupiditate fugiat perspiciatis aut.
+        </p>
+    </div>
+
+    <div>
+        <h1>titulo</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, molestias veritatis tempore eligendi ex
+            labore officia excepturi consectetur assumenda quis aliquam illum, fuga, cumque dolorum enim possimus
+            inventore aspernatur. Nemo?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum rerum dignissimos ex, quisquam enim non nisi,
+            provident minima quas delectus inventore, ipsam eius ut iure consequatur! Cum assumenda perspiciatis ad!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit soluta rem sapiente perferendis velit
+            officiis maiores eaque totam illo deserunt voluptatibus a tenetur, harum sed architecto enim fugiat quae
+            similique?</p>
+    </div>
+
+    <div>
+        <h1>titulo</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At molestiae inventore explicabo repudiandae, rem
+            assumenda maiores accusamus fugit veritatis dolorum nesciunt consequuntur quos aliquam? Praesentium
+            molestias impedit optio nemo quaerat.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate aut rerum, earum quo porro impedit,
+            officia natus dolor, molestiae asperiores sit nisi incidunt pariatur commodi quos ratione nam nobis
+            sapiente.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus omnis cupiditate dolorum perferendis quod
+            numquam laborum suscipit libero est, ipsum consequuntur placeat et, in quos, quasi ab ducimus sapiente!
+            Totam!</p>
+    </div>
+
+    <script type="module" src="./scripts/main.js"></script>
+</body>
+
+</html>
