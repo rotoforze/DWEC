@@ -1,0 +1,9 @@
+<documento>
+    <id>4</id>
+    <titulo>Proclamación de Emancipación</titulo>
+    <fecha>1863</fecha>
+    <imagen>img/img_4.png</imagen>
+    <descripcion>Decreto de Abraham Lincoln que liberó a los esclavos en los estados confederados.</descripcion>
+    <siguiente>documento_5.xml</siguiente>
+    <anterior>documento_3.xml</anterior>
+</documento>

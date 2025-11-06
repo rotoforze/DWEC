@@ -1,0 +1,9 @@
+<documento>
+    <id>6</id>
+    <titulo>Enmienda XIX de la Constitución</titulo>
+    <fecha>1920</fecha>
+    <imagen>img/img_6.png</imagen>
+    <descripcion>Otorga a las mujeres el derecho al voto en Estados Unidos.</descripcion>
+    <siguiente>null</siguiente>
+    <anterior>documento_5.xml</anterior>
+</documento>

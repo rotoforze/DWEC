@@ -1,0 +1,9 @@
+<documento>
+    <id>3</id>
+    <titulo>Carta de Derechos</titulo>
+    <fecha>1791</fecha>
+    <imagen>img/img_3.png</imagen>
+    <descripcion>Las primeras diez enmiendas que garantizan libertades individuales.</descripcion>
+    <siguiente>documento_4.xml</siguiente>
+    <anterior>documento_2.xml</anterior>
+</documento>

@@ -1,0 +1,9 @@
+<documento>
+    <id>5</id>
+    <titulo>Discurso de Gettysburg</titulo>
+    <fecha>1863</fecha>
+    <imagen>img/img_5.png</imagen>
+    <descripcion>Discurso histórico de Abraham Lincoln sobre la igualdad y la democracia.</descripcion>
+    <siguiente>documento_ultimo.xml</siguiente>
+    <anterior>documento_4.xml</anterior>
+</documento>
