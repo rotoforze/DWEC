@@ -1,0 +1,32 @@
+<reporte>
+    <medicion timestamp="2025-11-20T10:00:00Z">
+        <oxigeno>20.9</oxigeno>
+        <temperatura>-15.5</temperatura>
+        <presion>1012</presion>
+    </medicion>
+    <medicion timestamp="2025-11-20T09:00:00Z">
+        <oxigeno>21.1</oxigeno>
+        <temperatura>-15.2</temperatura>
+        <presion>1015</presion>
+    </medicion>
+    <medicion timestamp="2025-11-19T18:00:00Z">
+        <oxigeno>20.7</oxigeno>
+        <temperatura>-14.8</temperatura>
+        <presion>1008</presion>
+    </medicion>
+    <medicion timestamp="2025-11-19T12:00:00Z">
+        <oxigeno>21.3</oxigeno>
+        <temperatura>-16.1</temperatura>
+        <presion>1010</presion>
+    </medicion>
+    <medicion timestamp="2025-11-18T06:00:00Z">
+        <oxigeno>20.5</oxigeno>
+        <temperatura>-14.3</temperatura>
+        <presion>1005</presion>
+    </medicion>
+    <medicion timestamp="2025-11-17T08:00:00Z">
+        <oxigeno>21.0</oxigeno>
+        <temperatura>-13.9</temperatura>
+        <presion>1009</presion>
+    </medicion>
+</reporte>

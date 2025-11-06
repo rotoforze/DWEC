@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estación espacial</title>
+</head>
+<body>
+    <section>
+        <p>Medición más reciente <i><span class="fecha"></span></i></p>
+        <p><b>Oxígeno</b> <span class="oxigeno"></span></p>
+        <p><b>Temperatura</b> <span class="temperatura"></span></p>
+        <p><b>Presión </b> <span class="presion"></span></p>
+    </section>
+    <label for="selector">Inventario</label>
+    <select name="selector" id="selector">
+        <option value="void">------------------------------------------</option>
+    </select>
+    <p>Disponible: <b><span class="cantidad"></span></b> <span class="unidad"></span></p>
+    <button>Calcular autonomía</button>
+    <script type="module" src="./scripts/main.js"/>
+</body>
+</html>
