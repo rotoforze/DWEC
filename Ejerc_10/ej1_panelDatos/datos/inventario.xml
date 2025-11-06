@@ -1,32 +1,32 @@
 <inventario>
     <item id="AGUA01" unidad="litros">
         <nombre>Agua Potable</nombre>
-        <cantidad>500</cantidad>
+        <cantidad>2283</cantidad>
         <consumo>4</consumo>
     </item>
     <item id="COM01" unidad="kg">
         <nombre>Comida Deshidratada</nombre>
-        <cantidad>250</cantidad>
+        <cantidad>1274</cantidad>
         <consumo>2</consumo>
     </item>
     <item id="OXY01" unidad="botellas">
         <nombre>Oxígeno Comprimido</nombre>
-        <cantidad>80</cantidad>
+        <cantidad>432</cantidad>
         <consumo>1</consumo>
     </item>
     <item id="MED01" unidad="cajas">
         <nombre>Botiquín Médico</nombre>
-        <cantidad>20</cantidad>
+        <cantidad>52</cantidad>
         <consumo>0.5</consumo>
     </item>
     <item id="COM02" unidad="kg">
         <nombre>Fruta Liofilizada</nombre>
-        <cantidad>150</cantidad>
+        <cantidad>84</cantidad>
         <consumo>1.5</consumo>
     </item>
     <item id="PROT01" unidad="barras">
         <nombre>Barras Energéticas</nombre>
-        <cantidad>1000</cantidad>
+        <cantidad>748</cantidad>
         <consumo>5</consumo>
     </item>
 </inventario>

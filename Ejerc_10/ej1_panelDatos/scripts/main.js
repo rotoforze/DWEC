@@ -2,8 +2,17 @@ async function pedirDatos(documento) {
     return new Promise((resolve, reject) => {
         const peticion = new XMLHttpRequest();
         peticion.onload = () => {
-            console.log(`%c Datos recibidos en ${documento}`, 'color: #87e833ff');
-            resolve(peticion.response);
+            if (peticion.status == 200) {
+                console.log(`%c Datos recibidos en ${documento}`, 'color: #87e833ff');
+                resolve(peticion.response);
+            } else if (peticion.status == 404) {
+                console.log(`%c El archivo ${documento} no se ha encontrado.`, 'color: #ff3434ff');
+                window.alert(`No se ha encontrado el archivo ${documento}`);
+                reject;
+            } else {
+                console.log(`%c Error en la petición.`, 'color: #ff3434ff');
+                reject;
+            }
         };
         peticion.onerror = reject;
         peticion.open('GET', `./datos/${documento}`);
@@ -15,12 +24,8 @@ async function pedirDatos(documento) {
 
 async function init() {
     // primera parte del ejercicio
-    try {
-        var peticionSoporteVital = await pedirDatos('soporte_vital.xml');
-    } catch (error) {
-        window.alert('Error al intentar pedir los datos del soporte vital');
-        console.error(error);
-    }
+    const peticionSoporteVital = await pedirDatos('soporte_vital.xml');
+    
     // cojo todas las mediciones
     const mediciones = peticionSoporteVital.querySelectorAll('medicion');
 
@@ -41,12 +46,8 @@ async function init() {
 
 
     // segunda parte del ejercicio
-    try {
-        var peticionInventario = await pedirDatos('inventario.xml');
-    } catch (error) {
-        window.alert('Error al intentar pedir los datos del inventario');
-        console.error(error);
-    }
+    const peticionInventario = await pedirDatos('inventario.xml');
+    
     const items = peticionInventario.querySelectorAll('item');
     const select = document.querySelector('select');
     for (const itemActual of items) {
@@ -70,10 +71,13 @@ async function init() {
 export function calcularAutonomia() {
     console.log('%c Calculando autonomía...', 'color: #a26060ff');
     const select = document.querySelector('select');
+    if (select.selectedIndex == 0) return;
+    const item = select[select.selectedIndex];
     const cantidadTripulantes = 4;
-    const consumo = select[select.selectedIndex].getAttribute('consumo') * cantidadTripulantes;
-    const duracion = select[select.selectedIndex].getAttribute('cantidad') / consumo;
-    console.log(duracion)
+    const consumo = item.getAttribute('consumo') * cantidadTripulantes;
+    const duracion =  Number.parseInt(item.getAttribute('cantidad') / consumo);
+    document.querySelector('.nombre').textContent = item.textContent;
+    document.querySelector('.dias').textContent = duracion;
 }
 
 document.querySelector('button').addEventListener('click', calcularAutonomia)
