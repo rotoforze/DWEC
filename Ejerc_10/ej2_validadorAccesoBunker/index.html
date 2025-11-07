@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso a Búnker</title>
+</head>
+<body>
+    <form onsubmit="event.preventDefault(); validar();">
+        <div>
+            <label for="numAgente">Número de agente</label>
+            <input type="number" name="numAgente" id="numAgente">
+        </div>
+        <div>
+            <label for="clave">Clave</label>
+            <input type="password" name="clave" id="clave">
+        </div>
+        <input type="submit" value="Acceder" id="acceder" disabled>
+    </form>
+    <div class="informacion">
+        <div class="error" style="background-color: rgb(255, 104, 104);" hidden>¡Error en las claves!</div>
+        <div class="bienvenida" hidden>Bienvenido de nuevo, <span class="agente"></span></div>
+    </div>
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
