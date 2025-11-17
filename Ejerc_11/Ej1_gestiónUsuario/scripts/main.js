@@ -18,12 +18,21 @@ function mandarDatos() {
     });
     datos.hobbies = hobbies;
 
+
     const request = new XMLHttpRequest();
     request.open('POST', 'https://cors-anywhere.herokuapp.com/https://webhook.site/9fc6ea26-fdb4-4706-8b44-9746817d6870', true);
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify(datos));
     request.onload = () => {
-        document.querySelector('button').disabled = false;
+        if (request.status == 200) {
+            document.querySelector('button').disabled = false;
+            document.querySelector('#msj-confirmar').hidden = false;
+            document.querySelector('#msj-error').hidden = true;
+        } else {
+            document.querySelector('button').disabled = false;
+            document.querySelector('#msj-confirmar').hidden = true;
+            document.querySelector('#msj-error').hidden = false;
+        }
     };
 
 }
