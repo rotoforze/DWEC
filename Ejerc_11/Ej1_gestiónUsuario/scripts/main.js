@@ -28,6 +28,27 @@ function mandarDatos() {
 
 }
 
+function modificarDatos() {
+    const btn = document.querySelector('.btn-primary');
+    const cancelBtn = document.querySelector('#cancel');
+
+    if (cancelBtn.disabled) {
+        btn.textContent = 'Enviar Datos';
+        btn.removeEventListener('click', modificarDatos)
+        btn.addEventListener('click', mandarDatos);
+        cancelBtn.addEventListener('click', () => {
+            btn.textContent = 'Modificar datos';
+            btn.removeEventListener('click', mandarDatos);
+            btn.addEventListener('click', modificarDatos);
+            cancelBtn.removeEventListener('click', modificarDatos);
+            cancelBtn.disabled = true;
+            cancelBtn.hidden = true;
+        });
+        cancelBtn.disabled = false;
+        cancelBtn.hidden = false;
+    }
+}
+
 function cambiarAInput(item) {
     const nuevoInput = document.createElement('input');
     nuevoInput.type = 'text';
@@ -77,7 +98,7 @@ function parseData() {
             cambiarAInput(span);
         });
     });
-    document.querySelector('button').addEventListener('click', mandarDatos);
+    document.querySelector('.btn-primary').addEventListener('click', modificarDatos);
 }
 
 function getData() {
