@@ -1,0 +1,16 @@
+[
+    {
+        "id": "1",
+        "content": {
+            "author": "Pepe",
+            "message": "¡Me gustan los días soleados!"
+        }
+    },
+    {
+        "id": "2",
+        "content": {
+            "author": "Alicia",
+            "message": "Toda la razón @Pepe, ¡SON GENIALES!"
+        }
+    }
+]

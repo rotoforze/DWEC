@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMENTARIOS</title>
+</head>
+<body>
+    <div id="comments-section">
+        <form>
+            <label for="autor">Autor</label>
+            <input type="text" name="autor" id="autor">
+            <div class="error-autor" hidden>Autor no válido o falta</div>
+            <label for="mensaje">Mensaje</label>
+            <textarea name="mensaje" id="mensaje" placeholder="Escribe tu mensaje..."></textarea>
+            <div class="error-msj" hidden>Mensaje no válido o falta</div>
+            <input type="submit" id="publicar" value="Publicar">
+        </form>
+        <ul id="comments-list">
+            
+        </ul>
+    </div>
+    <script type="module" src="scripts/main.js"></script>
+</body>
+</html>
