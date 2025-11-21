@@ -32,6 +32,9 @@ function init() {
 
 function mandarComentario() {
     // se manda al servidor, si status == 200 devuelve true
+    if (true) {
+
+    }
     return true;
 }
 
