@@ -1,0 +1,281 @@
+[
+  {
+    "id": "PROD001",
+    "name": "Smartphone X",
+    "description": "Potente smartphone con cámara de 108MP y batería de larga duración.",
+    "price": 699.99,
+    "category": "Electrónica",
+    "brand": "TechCorp",
+    "rating": 4.5,
+    "stock": 50,
+    "imageUrl": "https://example.com/smartphone_x.jpg"
+  },
+  {
+    "id": "PROD002",
+    "name": "Laptop UltraBook",
+    "description": "Diseño ligero y alto rendimiento para profesionales.",
+    "price": 1299.99,
+    "category": "Electrónica",
+    "brand": "InnovatePC",
+    "rating": 4.8,
+    "stock": 25,
+    "imageUrl": "https://example.com/laptop_ultrabook.jpg"
+  },
+  {
+    "id": "PROD003",
+    "name": "Cafetera Espresso",
+    "description": "Prepara tu café favorito en minutos con calidad profesional.",
+    "price": 129.0,
+    "category": "Hogar",
+    "brand": "HomeEssentials",
+    "rating": 4.2,
+    "stock": 100,
+    "imageUrl": "https://example.com/cafetera_espresso.jpg"
+  },
+
+  {
+    "id": "PROD004",
+    "name": "Televisor 4K VisionMax 55\"",
+    "description": "Pantalla UHD con colores vibrantes y sonido envolvente.",
+    "price": 749.99,
+    "category": "Electrónica",
+    "brand": "VisionMax",
+    "rating": 4.6,
+    "stock": 40,
+    "imageUrl": "https://example.com/tv_visionmax_55.jpg"
+  },
+  {
+    "id": "PROD005",
+    "name": "Auriculares NoiseBlock Pro",
+    "description": "Cancelación de ruido avanzada y batería de larga duración.",
+    "price": 159.99,
+    "category": "Electrónica",
+    "brand": "SoundMagic",
+    "rating": 4.4,
+    "stock": 80,
+    "imageUrl": "https://example.com/auriculares_noiseblock.jpg"
+  },
+  {
+    "id": "PROD006",
+    "name": "Smartwatch FitLife",
+    "description": "Monitoreo de salud, GPS integrado y resistencia al agua.",
+    "price": 199.99,
+    "category": "Electrónica",
+    "brand": "FitLife",
+    "rating": 4.3,
+    "stock": 65,
+    "imageUrl": "https://example.com/smartwatch_fitlife.jpg"
+  },
+  {
+    "id": "PROD007",
+    "name": "Barra de Sonido SurroundGo",
+    "description": "Mejora tu experiencia de cine en casa con audio envolvente.",
+    "price": 249.99,
+    "category": "Electrónica",
+    "brand": "SoundPro",
+    "rating": 4.5,
+    "stock": 55,
+    "imageUrl": "https://example.com/surroundgo.jpg"
+  },
+  {
+    "id": "PROD008",
+    "name": "Cámara Reflex ProShot",
+    "description": "Captura imágenes profesionales con su sensor de alta resolución.",
+    "price": 899.0,
+    "category": "Electrónica",
+    "brand": "ProShot",
+    "rating": 4.7,
+    "stock": 20,
+    "imageUrl": "https://example.com/camara_proshot.jpg"
+  },
+  {
+    "id": "PROD009",
+    "name": "Tablet MediaTab 10\"",
+    "description": "Dispositivo versátil para entretenimiento y productividad.",
+    "price": 329.99,
+    "category": "Electrónica",
+    "brand": "MediaWorks",
+    "rating": 4.1,
+    "stock": 70,
+    "imageUrl": "https://example.com/tablet_mediatab.jpg"
+  },
+
+  {
+    "id": "PROD010",
+    "name": "Aspiradora Robot CleanBot",
+    "description": "Limpieza automática con navegación inteligente.",
+    "price": 249.0,
+    "category": "Hogar",
+    "brand": "CleanTech",
+    "rating": 4.4,
+    "stock": 90,
+    "imageUrl": "https://example.com/robot_cleanbot.jpg"
+  },
+  {
+    "id": "PROD011",
+    "name": "Purificador de Aire FreshAir",
+    "description": "Elimina partículas y mejora la calidad del aire en tu hogar.",
+    "price": 179.99,
+    "category": "Hogar",
+    "brand": "AirPure",
+    "rating": 4.6,
+    "stock": 60,
+    "imageUrl": "https://example.com/air_freshair.jpg"
+  },
+  {
+    "id": "PROD012",
+    "name": "Microondas HeatWave",
+    "description": "Calienta y cocina tus alimentos con múltiples funciones.",
+    "price": 99.99,
+    "category": "Hogar",
+    "brand": "KitchenPro",
+    "rating": 4.3,
+    "stock": 120,
+    "imageUrl": "https://example.com/microondas_heatwave.jpg"
+  },
+  {
+    "id": "PROD013",
+    "name": "Aspiradora UltraClean",
+    "description": "Potencia de succión mejorada y filtro HEPA.",
+    "price": 149.99,
+    "category": "Hogar",
+    "brand": "HomeClean",
+    "rating": 4.0,
+    "stock": 75,
+    "imageUrl": "https://example.com/ultraclean.jpg"
+  },
+  {
+    "id": "PROD014",
+    "name": "Batidora PowerMix",
+    "description": "Ideal para repostería y mezclas potentes.",
+    "price": 59.99,
+    "category": "Hogar",
+    "brand": "MixMaster",
+    "rating": 4.3,
+    "stock": 110,
+    "imageUrl": "https://example.com/powermix.jpg"
+  },
+  {
+    "id": "PROD015",
+    "name": "Freidora de Aire AirCrispy",
+    "description": "Cocina con menos aceite manteniendo el sabor y textura.",
+    "price": 89.99,
+    "category": "Hogar",
+    "brand": "AirCrispy",
+    "rating": 4.5,
+    "stock": 95,
+    "imageUrl": "https://example.com/aircrispy.jpg"
+  },
+
+  {
+    "id": "PROD016",
+    "name": "Zapatillas Running SpeedStep",
+    "description": "Máxima comodidad y amortiguación para corredores.",
+    "price": 79.99,
+    "category": "Moda",
+    "brand": "SpeedStep",
+    "rating": 4.4,
+    "stock": 150,
+    "imageUrl": "https://example.com/speedstep.jpg"
+  },
+  {
+    "id": "PROD017",
+    "name": "Chaqueta Impermeable StormWear",
+    "description": "Protección contra lluvia y viento con diseño moderno.",
+    "price": 119.99,
+    "category": "Moda",
+    "brand": "StormWear",
+    "rating": 4.6,
+    "stock": 85,
+    "imageUrl": "https://example.com/stormwear.jpg"
+  },
+  {
+    "id": "PROD018",
+    "name": "Reloj Clásico ElegantTime",
+    "description": "Estilo clásico con correa de cuero genuino.",
+    "price": 149.0,
+    "category": "Moda",
+    "brand": "ElegantTime",
+    "rating": 4.2,
+    "stock": 50,
+    "imageUrl": "https://example.com/eleganttime.jpg"
+  },
+  {
+    "id": "PROD019",
+    "name": "Mochila TravelPro",
+    "description": "Amplio espacio y resistencia para viajes largos.",
+    "price": 69.99,
+    "category": "Accesorios",
+    "brand": "TravelPro",
+    "rating": 4.5,
+    "stock": 130,
+    "imageUrl": "https://example.com/travelpro.jpg"
+  },
+  {
+    "id": "PROD020",
+    "name": "Gafas de Sol SunView",
+    "description": "Protección UV400 con estilo moderno.",
+    "price": 39.99,
+    "category": "Accesorios",
+    "brand": "SunView",
+    "rating": 4.1,
+    "stock": 200,
+    "imageUrl": "https://example.com/sunview.jpg"
+  },
+
+  {
+    "id": "PROD021",
+    "name": "Monitor 27\" UltraSharp",
+    "description": "Resolución QHD y colores precisos para creadores.",
+    "price": 349.99,
+    "category": "Electrónica",
+    "brand": "UltraSharp",
+    "rating": 4.7,
+    "stock": 45,
+    "imageUrl": "https://example.com/ultrasharp27.jpg"
+  },
+  {
+    "id": "PROD022",
+    "name": "Teclado Mecánico KeyPro RGB",
+    "description": "Interruptores mecánicos y retroiluminación RGB personalizable.",
+    "price": 89.99,
+    "category": "Electrónica",
+    "brand": "KeyPro",
+    "rating": 4.6,
+    "stock": 90,
+    "imageUrl": "https://example.com/keypro_rgb.jpg"
+  },
+  {
+    "id": "PROD023",
+    "name": "Ratón Inalámbrico SwiftMouse",
+    "description": "Precisón y ergonomía para largas jornadas.",
+    "price": 39.99,
+    "category": "Electrónica",
+    "brand": "SwiftTech",
+    "rating": 4.3,
+    "stock": 140,
+    "imageUrl": "https://example.com/swiftmouse.jpg"
+  },
+  {
+    "id": "PROD024",
+    "name": "Silla Gamer ComfortSeat",
+    "description": "Diseño ergonómico con soporte lumbar ajustable.",
+    "price": 199.99,
+    "category": "Hogar",
+    "brand": "ComfortSeat",
+    "rating": 4.4,
+    "stock": 60,
+    "imageUrl": "https://example.com/comfortseat.jpg"
+  },
+  {
+    "id": "PROD025",
+    "name": "Altavoz Bluetooth BassBoom",
+    "description": "Sonido potente y batería de 12 horas.",
+    "price": 59.99,
+    "category": "Electrónica",
+    "brand": "BassBoom",
+    "rating": 4.5,
+    "stock": 100,
+    "imageUrl": "https://example.com/bassboom.jpg"
+  }
+]

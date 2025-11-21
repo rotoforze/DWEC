@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo dinámico de productos</title>
+</head>
+
+<body>
+    <div id="catalog-container">
+        <div id="controles-filtrado">
+            <select name="" id="filtro-categoria">
+                <option value="default">-- Categoria --</option>
+            </select>
+            <select name="" id="filtro-marca">
+                <option value="default">-- Marca --</option>
+            </select>
+            <select name="" id="filtro-precio">
+                <option value="asc">Ascendente</option>
+                <option value="desc">Descendente</option>
+            </select>
+        </div>
+        <div id="product-list"></div>
+    </div>
+    <script type="module" src="scripts/main.js"></script>
+</body>
+
+</html>
