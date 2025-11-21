@@ -1,8 +1,7 @@
 let data;
-let cantidadMensajes = 0;
+let cantidadMensajes = 1;
 function init() {
     getData();
-
     document.querySelector('#publicar').addEventListener('click', (e) => {
         e.preventDefault();
 
@@ -11,13 +10,11 @@ function init() {
             // OCULTO LOS ERRORES
             document.querySelector('.error-autor').hidden = true;
             document.querySelector('.error-msj').hidden = true;
-            // manda el mensaje al serv, si lo recibe, lo muestra en la lista...
-            if (mandarComentario()) {
-                addMensaje(undefined, document.querySelector('#autor').value, document.querySelector('#mensaje').value);
-                clearForm();
-            }
+            // manda el mensaje al serv, si lo recibe, lo muestra en la lista... 
+            const objeto = newMensaje(document.querySelector('#autor').value, document.querySelector('#mensaje').value);
+            mandarComentario(objeto);
 
-        }else {
+        } else {
             // mostrar errores
             if (document.querySelector('#autor').value) {
                 document.querySelector('.error-autor').hidden = true;
@@ -30,12 +27,35 @@ function init() {
     });
 }
 
-function mandarComentario() {
-    // se manda al servidor, si status == 200 devuelve true
-    if (true) {
+async function mandarComentario(objeto) {
+    document.querySelector(".error-conexion").hidden = true;
+    const request = new XMLHttpRequest();
+    request.open('POST', 'https://cors-anywhere.herokuapp.com/https://webhook.site/aa26bb1a-1dbd-4541-87bf-4174556ad904');
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.send(JSON.stringify(objeto));
+    request.onload = () => {
+        if (request.status == 200) {
+            console.log("ok")
+            addMensaje(objeto.id ? objeto.id : cantidadMensajes, objeto.content.author, objeto.content.message);
+            clearForm();
+            return true;
+        } else {
+            console.error("not ok");
+            document.querySelector(".error-conexion").hidden = false;
+            return false;
+        }
+    };
+}
 
-    }
-    return true;
+function newMensaje(autor, contenido) {
+    return {
+        "id": cantidadMensajes,
+        "publishedTime": new Date().toISOString(),
+        "content": {
+            "author": autor,
+            "message": contenido
+        }
+    };
 }
 
 function clearForm() {
@@ -46,7 +66,8 @@ function clearForm() {
 function validarForm() {
     if (document.querySelector('#autor').value && document.querySelector('#mensaje')) {
         return true;
-    }else return false;
+    } else return false;
+
 }
 
 function getData() {
@@ -63,9 +84,9 @@ function getData() {
     request.send();
 }
 
-function parseData() {
+async function parseData() {
     for (const msj of data) {
-        addMensaje(msj.id, msj.content.author, msj.content.message);
+        mandarComentario(msj);
     }
 }
 

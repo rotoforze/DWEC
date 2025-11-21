@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COMENTARIOS</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+        }
+        form textarea {
+            height: 120px;
+            resize: none;
+        }
+    </style>
 </head>
 <body>
     <div id="comments-section">
@@ -15,6 +26,7 @@
             <textarea name="mensaje" id="mensaje" placeholder="Escribe tu mensaje..."></textarea>
             <div class="error-msj" hidden>Mensaje no válido o falta</div>
             <input type="submit" id="publicar" value="Publicar">
+            <div class="error-conexion">Error al enviar el comentario, intentalo de nuevo más tarde.</div>
         </form>
         <ul id="comments-list">
             
