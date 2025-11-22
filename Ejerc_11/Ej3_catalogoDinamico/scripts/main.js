@@ -11,7 +11,7 @@ function init() {
 }
 
 async function getData() {
-    await fetch('./data/products.jsn')
+    await fetch('./data/products.json')
         .then((response) => {
             return response.json();
         })
