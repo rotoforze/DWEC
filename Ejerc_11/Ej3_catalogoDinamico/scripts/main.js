@@ -11,15 +11,17 @@ function init() {
 }
 
 async function getData() {
-    await fetch('./data/products.json')
+    await fetch('./data/products.jsn')
         .then((response) => {
             return response.json();
         })
         .then((resultado) => {
+            document.querySelector(".error-conexion").hidden = true;
             datos = resultado;
             parseDatos();
         })
         .catch((error) => {
+            document.querySelector(".error-conexion").hidden = false;
             console.error(error);
         });
 }
