@@ -5,17 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo dinámico de productos</title>
+    <style>
+        #controles-filtrado {
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+        }
+        #item {
+            width: 80dvw;
+            background-color: whitesmoke;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0 10px 0;
+        }
+    </style>
 </head>
 
 <body>
     <div id="catalog-container">
         <div id="controles-filtrado">
+            <label for="filtro-categoria">Categoria</label>
             <select name="" id="filtro-categoria">
                 <option value="default">-- Categoria --</option>
             </select>
+            <label for="filtro-marca">Marca</label>
             <select name="" id="filtro-marca">
                 <option value="default">-- Marca --</option>
             </select>
+            <label for="filtro-precio">Orden precio</label>
             <select name="" id="filtro-precio">
                 <option value="asc">Ascendente</option>
                 <option value="desc">Descendente</option>

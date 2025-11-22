@@ -97,7 +97,7 @@ function parseDatos() {
 
 function pintarProducto(producto) {
     document.querySelector("#product-list").innerHTML += (`
-            <div data-id="${producto.id}">
+            <div id="item" data-id="${producto.id}">
                 <h2>${producto.name}</h2>
                 <p>${producto.description}</p>
                 <p>Precio: ${producto.price}</p>
