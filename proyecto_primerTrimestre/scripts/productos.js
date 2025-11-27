@@ -19,42 +19,39 @@ let tipoAromas = new Set();
  * Devuelve true si se ha cargado con éxito.
  * Devuelve false si ha ocurrido algún error.
  */
-export function cargarDatos() {
-    fetch("data/productos.json")
-        .then((response) => {
-            return response.json();
-        })
-        .then((datos) => {
-            productos = datos;
+export async function cargarDatos() {
+    try {
+        productos = await fetchJSON("data/productos.json");
 
-            // recogemos todos los datos como las categorias etc.
-            catchEveryData();
-            // renderizamos los datos
-            addMarcas(marcas);
-            addCategorias(categorias);
-            addProcedencias(procedencias);
-            addTueste(tipoTueste)
-            addAromas(tipoAromas);
-            cambiarListaProductos(productos);
+        // recogemos todos los datos como las categorias etc.
+        await catchEveryData();
+
+        // renderizamos los datos
+        addMarcas(marcas);
+        addCategorias(categorias);
+        addProcedencias(procedencias);
+        addTueste(tipoTueste)
+        addAromas(tipoAromas);
+        cambiarListaProductos(productos);
 
 
-            // fin del método
-            return true;
-        })
-        .catch((error) => {
-            console.error(error);
-            return false;
-        });
+        // fin del método
+        return true;
+    } catch (error) {
+        console.error(error);
+        return false;
+    }
 }
 
 /**
  * Guarda los datos de los productos en diferentes sets
  * para tenerlos ya guardados y más accesibles.
  */
-function catchEveryData() {
+async function catchEveryData() { 
+    await catchMarcas();
     for (const producto of productos) {
         // marca
-        if (!marcas.has(producto.marca)) marcas.add(producto.marca);
+        // if (!marcas.has(producto.marca)) marcas.add(producto.marca);
         // categoria
         if (!categorias.has(producto.categoria)) categorias.add(producto.categoria);
         // procendencia
@@ -66,4 +63,51 @@ function catchEveryData() {
             if (!tipoAromas.has(aroma)) tipoAromas.add(aroma);
         }
     }
+}
+
+async function catchMarcas() {
+    try {
+        temporalData = await fetchJSON("data/marcas.json");
+
+        for (const marca of temporalData) {
+            if (!marcas.has(marca.valor)) marcas.add(marca.valor);
+        }
+    } catch (error) {
+        console.error(error);
+    }
+
+
+}
+function catchCategorias() {
+
+}
+function catchProcedencias() {
+
+}
+function catchTuestes() {
+
+}
+function catchAromas() {
+
+}
+
+/**
+ * Recibe un archivo para hacerle un fetch,
+ * devuelve su contenido.
+ * 
+ * @param {File} ruta 
+ */
+async function fetchJSON(ruta) {
+    return new Promise(
+        function (resolve, reject) {
+            fetch(ruta)
+                .then((response) => {
+                    return resolve(response.json());
+                })
+                .catch((error) => {
+                    console.error(error);
+                    return reject(false);
+                });
+        }
+    );
 }
