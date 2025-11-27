@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon">
+    <title>Tienda de Café</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+
+    <!-- CABECERA -->
+    <nav class="navbar navbar-expand-lg navbar-dark p-3">
+        <div class="container-fluid">
+            <div class="align-items-center d-flex ms-auto area-login">
+                <a class="navbar-brand" href="#">☕ Tienda de Café</a>
+                <div class="d-flex flex-row w-100 bg-light me-3 rounded-1 bg-light">
+                    <input class="form-control rounded-start-1 rounded-end-0" type="search" placeholder="Buscar...">
+                    <button class="btn btn-light rounded-start-0 rounded-end-1 bg-light">🔍</button>
+                </div>
+                <!-- DROPDOWN LOGIN -->
+                <div class="dropdown me-2">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="loginDropdown"
+                        data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                        👤
+                    </button>
+                    <div class="contenedor-login dropdown-menu dropdown-menu-end custom-dropdown p-3 ms-auto"
+                        aria-labelledby="loginDropdown">
+                        <h6 class="dropdown-header text-center">Iniciar Sesión</h6>
+                        <form class="form-login">
+                            <div class="mb-3">
+                                <label>Email</label>
+                                <input type="email" class="form-control" placeholder="ana.garcia@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label>Contraseña</label>
+                                <input type="password" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <input type="checkbox" name="keep-logged" id="keep-logged">
+                                <label for="keep-logged">Mantener sesión iniciada</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- DROPDOWN DEL CARRITO -->
+                <div class="dropdown">
+                    <button class="btn btn-outline-light dropdown-toggle" type="button" id="cartDropdown"
+                        data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                        🛒
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end cart-dropdown p-3" aria-labelledby="cartDropdown">
+                        <h6 class="dropdown-header text-center">Carrito de Compra</h6>
+                        <table class="table table-sm align-middle">
+                            <thead>
+                                <tr>
+                                    <th>Imagen</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><img src="https://via.placeholder.com/40" alt="café"></td>
+                                    <td>Café Espresso</td>
+                                    <td>$9.99</td>
+                                    <td>
+                                        <div class="cantidad-control">
+                                            <button class="btn btn-sm btn-outline-secondary">-</button>
+                                            <span>1</span>
+                                            <button class="btn btn-sm btn-outline-secondary">+</button>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-danger">✕</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="dropdown-divider"></div>
+                        <p class="mb-1"><strong>Total:</strong> $9.99</p>
+                        <button class="btn btn-warning w-100">Vaciar Carrito</button>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center ms-auto filtros">
+                <select class="form-select me-2" id="marcaSelect">
+                    <option selected>Marca</option>
+                </select>
+                <select class="form-select me-2" id="categoriaSelect">
+                    <option selected>Categoría</option>
+                </select>
+                <select class="form-select me-2" id="procedenciaSelect">
+                    <option selected>Procedencia</option>
+                </select>
+                <select class="form-select me-2" id="tuesteSelect">
+                    <option selected>Tueste</option>
+                </select>
+                <div class="me-2 btn-group flex-d ms-auto" id="aromasDropdown" type="button">
+                    <button class="btn btn-light dropdown-toggle aromas-btn" type="button" data-bs-toggle="dropdown"
+                        data-bs-auto-close="outside" aria-expanded="false">Aromas</button>
+                    <div class="aromas-list dropdown-menu dropdown-menu border border-dark-subtle"
+                        aria-labelledby="aromasDropdown">
+                    </div>
+                </div>
+                <select class="form-select me-2" id="tipoSelect">
+                    <option selected>Tipo</option>
+                    <option value="molido">Molido</option>
+                    <option value="grano">Grano</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CUERPO DE PRODUCTOS -->
+    <div class="productos-wrapper">
+        <div class="productos-container" id="productos">
+
+        </div>
+    </div>
+
+    <div class="alertas">
+        <div class="alerta error-login error-bg" hidden>Los datos son incorrectos.</div>
+        <div class="alerta ok-login ok-bg" hidden>Sesión iniciada.</div>
+        <div class="alerta item-added info-bg" hidden>Producto añadido</div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
+</body>
+
+</html>

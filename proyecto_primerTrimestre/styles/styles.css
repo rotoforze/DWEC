@@ -1,0 +1,172 @@
+        /* Fondo con rombos en el header */
+        body {
+            background-color: #2c2c2c;
+            background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.1) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.1) 75%);
+            background-size: 40px 40px;
+            height: 100dvh;
+            width: 100dvw;
+            overflow-y: hidden;
+        }
+
+        /* Fondo del contenedor padre */
+        .productos-wrapper {
+            background: #f5f5f5;
+            border-radius: 15px 0px 0px 15px;
+            height: 100%;
+            /* ocupa el resto de la pantalla menos el header */
+            width: 90dvw;
+            margin: 0px auto;
+            display: flex;
+            padding: 20px;
+            overflow-y: scroll;
+            scrollbar-color: #2c2c2c #f5f5f5;
+            justify-content: center;
+        }
+
+        .aromas-list {
+            height: 40dvh;
+            overflow-y: scroll;
+            padding: 10px;
+        }
+        .aromas-btn {
+            width: 40dvw !important; 
+        }
+
+        .aromas-list.show {
+            /* left: -55%; */
+            display: flex;
+            flex-wrap: wrap;
+            width: 40dvw !important;
+            padding: 10px;
+        }
+
+        .checkbox-item {
+            margin-top: 10px;
+        }
+
+        /* Contenedor flex con wrap */
+        .productos-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+        }
+
+        /* Tarjetas iguales */
+        .card.product-card {
+            width: 250px;
+            min-height: 250px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card.product-card img {
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card-body div button {
+            margin-top: 10px;
+        }
+
+        .area-login {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .form-login button {
+            display: flex;
+            justify-content: center;
+        }
+
+        form {
+            width: max-content !important;
+        } 
+        .navbar .container-fluid{
+            display: flex !important;
+            flex-direction: column !important;
+            width: 80dvw;
+        }
+
+        #loading-spinner {
+            margin-left: 6px;
+            width: 20px;
+            height: 20px;
+            border: 4px solid #ccc;
+            /* color del borde base */
+            border-top-color: #3498db;
+            border-bottom-color: #3498db;
+            /* color del borde que se verá como “activo” */
+            border-radius: 50%;
+            /* forma circular */
+            animation: spin 0.8s linear infinite;
+        }
+
+        /* Animación de giro */
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .alertas {
+            position: fixed;
+            bottom: 0;
+            bottom: 0;
+            height: fit-content;
+            padding: 20px;
+        }
+
+        .alerta {
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: #f5f5f5 2px 2px;
+            box-shadow: #c2c2c2 3px 3px;
+            box-shadow: #f5f5f5 3.5px 3.5px;
+            box-shadow: #c2c2c2 3.75px 3.75px;
+            opacity: 0;
+            transform: translateY(0);
+            transition: opacity 2s ease, transform 3s ease;
+        }
+
+        /* Cuando aparece (animación normal) */
+        .alerta.mostrar {
+            opacity: 1;
+            transition: opacity 2s ease, transform 3s linear;
+            transform: translateY(10px);
+        }
+
+        /* Cuando vuelve a estar hidden → que se desvanezca antes */
+        .alerta.desvanecer {
+            opacity: 0;
+            transition: opacity 5s ease;
+        }
+
+        .error-bg {
+            background-color: lightcoral;
+            color: white
+        }
+
+        .ok-bg {
+            background-color: greenyellow;
+        }
+
+        .info-bg {
+            background-color: lightskyblue;
+        }
+        .filtros {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            justify-content: space-between;
+            flex-direction: row !important;
+        }
+        .filtros * {
+            width: fit-content;
+        }

@@ -1,0 +1,170 @@
+[
+  {
+    "questionId": "Q001",
+    "text": "¿Cuál NO es un tipo de petición HTTP comúnmente usado en AJAX?",
+    "options": [
+      {
+        "id": "A",
+        "text": "GET"
+      },
+      {
+        "id": "B",
+        "text": "POST"
+      },
+      {
+        "id": "C",
+        "text": "PULL"
+      },
+      {
+        "id": "D",
+        "text": "PUT"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "PULL no es un método HTTP estándar; GET, POST, PUT, DELETE son los más comunes."
+  },
+  {
+    "questionId": "Q002",
+    "text": "¿Qué método se utiliza para 'parsear' una cadena JSON a un objeto JavaScript?",
+    "options": [
+      {
+        "id": "A",
+        "text": "JSON.toObject()"
+      },
+      {
+        "id": "B",
+        "text": "JSON.parse()"
+      },
+      {
+        "id": "C",
+        "text": "JSON.stringify()"
+      },
+      {
+        "id": "D",
+        "text": "JSON.decode()"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "JSON.parse() convierte una cadena JSON en un objeto JavaScript."
+  },
+  {
+    "questionId": "Q003",
+    "text": "¿Qué propiedad del objeto XMLHttpRequest indica que la respuesta está completamente recibida?",
+    "options": [
+      {
+        "id": "A",
+        "text": "readyState = 4"
+      },
+      {
+        "id": "B",
+        "text": "status = 200"
+      },
+      {
+        "id": "C",
+        "text": "completed = true"
+      },
+      {
+        "id": "D",
+        "text": "state = 'done'"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "El valor readyState = 4 indica que la operación está completada."
+  },
+  {
+    "questionId": "Q004",
+    "text": "¿Cuál es el propósito del método JSON.stringify()?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Convertir un objeto JavaScript a una cadena JSON"
+      },
+      {
+        "id": "B",
+        "text": "Convertir una cadena JSON a un objeto JavaScript"
+      },
+      {
+        "id": "C",
+        "text": "Validar una cadena JSON"
+      },
+      {
+        "id": "D",
+        "text": "Enviar una petición AJAX"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "JSON.stringify() transforma un objeto JavaScript en una cadena JSON."
+  },
+  {
+    "questionId": "Q005",
+    "text": "¿Qué opción describe mejor AJAX?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Un lenguaje de programación nuevo"
+      },
+      {
+        "id": "B",
+        "text": "Una técnica para actualizar partes de una página sin recargarla"
+      },
+      {
+        "id": "C",
+        "text": "Un framework de JavaScript"
+      },
+      {
+        "id": "D",
+        "text": "Un protocolo de red"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "AJAX permite actualizar contenido de forma asíncrona sin recargar toda la página."
+  },
+  {
+    "questionId": "Q006",
+    "text": "¿Cuál de los siguientes es un código de estado HTTP que indica 'No encontrado'?",
+    "options": [
+      {
+        "id": "A",
+        "text": "200"
+      },
+      {
+        "id": "B",
+        "text": "301"
+      },
+      {
+        "id": "C",
+        "text": "404"
+      },
+      {
+        "id": "D",
+        "text": "500"
+      }
+    ],
+    "correctAnswer": "C",
+    "explanation": "El código 404 significa que el recurso solicitado no fue encontrado."
+  },
+  {
+    "questionId": "Q007",
+    "text": "¿Qué método JavaScript se usa para enviar una petición AJAX utilizando Fetch API?",
+    "options": [
+      {
+        "id": "A",
+        "text": "fetch()"
+      },
+      {
+        "id": "B",
+        "text": "request()"
+      },
+      {
+        "id": "C",
+        "text": "ajax()"
+      },
+      {
+        "id": "D",
+        "text": "send()"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "fetch() es el método nativo moderno para realizar peticiones HTTP."
+  }
+]

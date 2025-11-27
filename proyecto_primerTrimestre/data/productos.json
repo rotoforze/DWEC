@@ -1,0 +1,520 @@
+[
+  {
+    "id": 1,
+    "nombre": "Café Montaña Dulce",
+    "marca": 1,
+    "categoria": 1,
+    "informacion": {
+      "procedencia": 1,
+      "tueste": 1,
+      "aromas": [
+        1,
+        2
+      ],
+      "descripcion": "Café colombiano equilibrado y dulce.",
+      "tipo": "grano"
+    },
+    "precio": 8.50,
+    "stock": 40,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://media.gettyimages.com/id/1149320657/es/foto/caf%C3%A9.jpg?s=612x612&w=gi&k=20&c=jclszd3K6hkAMqMq2PERPNU8vXrCjs3L8GhTGZgSmn0="
+  },
+  {
+    "id": 2,
+    "nombre": "Finca Sol Floral",
+    "marca": 2,
+    "categoria": 1,
+    "informacion": {
+      "procedencia": 2,
+      "tueste": 2,
+      "aromas": [
+        3,
+        4
+      ],
+      "descripcion": "Café etíope suave y aromático.",
+      "tipo": "molido"
+    },
+    "precio": 12.00,
+    "stock": 25,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://www.shutterstock.com/image-photo/coffee-beans-on-ground-arabica-600nw-2276420349.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Sierra Espresso Noble",
+    "marca": 3,
+    "categoria": 2,
+    "informacion": {
+      "procedencia": 3,
+      "tueste": 3,
+      "aromas": [
+        5,
+        1
+      ],
+      "descripcion": "Blend brasileño para espresso.",
+      "tipo": "grano"
+    },
+    "precio": 9.20,
+    "stock": 32,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://thumbs.dreamstime.com/b/la-visi%C3%B3n-superior-as%C3%B3-los-granos-de-caf%C3%A9-en-sacos-del-c%C3%A1%C3%B1amo-aislados-blanco-101228249.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Montaña Suave Miel",
+    "marca": 1,
+    "categoria": 1,
+    "informacion": {
+      "procedencia": 1,
+      "tueste": 2,
+      "aromas": [
+        6,
+        7
+      ],
+      "descripcion": "Café suave con acidez destacada.",
+      "tipo": "molido"
+    },
+    "precio": 9.80,
+    "stock": 22,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://st2.depositphotos.com/1372611/9568/i/950/depositphotos_95682808-stock-photo-ground-coffee-on-white-plate.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Robusta Intenso Vietnam",
+    "marca": 4,
+    "categoria": 3,
+    "informacion": {
+      "procedencia": 4,
+      "tueste": 4,
+      "aromas": [
+        8,
+        9
+      ],
+      "descripcion": "Robusta de carácter intenso.",
+      "tipo": "grano"
+    },
+    "precio": 6.00,
+    "stock": 55,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://media.gettyimages.com/id/1195729680/es/foto/arpillera-de-caf%C3%A9-y-grano-de-caf%C3%A9.jpg?s=612x612&w=gi&k=20&c=ieJNivA1bOtcmj29a1Dqv5FaGuwFADM-bkx4GltjgaM="
+  },
+  {
+    "id": 6,
+    "nombre": "Blend Urbano Suave",
+    "marca": 5,
+    "categoria": 2,
+    "informacion": {
+      "procedencia": 3,
+      "tueste": 1,
+      "aromas": [
+        10,
+        2
+      ],
+      "descripcion": "Blend suave ideal para filtro.",
+      "tipo": "molido"
+    },
+    "precio": 7.80,
+    "stock": 45,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://elements-resized.envatousercontent.com/elements-video-cover-images/files/221db688-2a70-4b73-beb2-942366907e04/inline_image_preview.jpg?w=500&cf_fit=cover&q=85&format=auto&s=fcb2a557bcf381b283e4d84c638102784f6beae25bed87befee0bf1d6ea72693"
+  },
+  {
+    "id": 7,
+    "nombre": "Sierra Caramelo Guatemala",
+    "marca": 3,
+    "categoria": 1,
+    "informacion": {
+      "procedencia": 5,
+      "tueste": 1,
+      "aromas": [
+        2,
+        11
+      ],
+      "descripcion": "Aromático y equilibrado.",
+      "tipo": "grano"
+    },
+    "precio": 10.50,
+    "stock": 28,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://media.gettyimages.com/id/1149320657/es/foto/caf%C3%A9.jpg?s=612x612&w=gi&k=20&c=jclszd3K6hkAMqMq2PERPNU8vXrCjs3L8GhTGZgSmn0="
+  },
+  {
+    "id": 8,
+    "nombre": "Finca Sol Té y Bergamota",
+    "marca": 2,
+    "categoria": 1,
+    "informacion": {
+      "procedencia": 2,
+      "tueste": 2,
+      "aromas": [
+        12,
+        13
+      ],
+      "descripcion": "Café floral muy aromático.",
+      "tipo": "molido"
+    },
+    "precio": 13.00,
+    "stock": 18,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://www.shutterstock.com/image-photo/large-amount-ground-coffee-roasted-260nw-2633969369.jpg"
+  },
+  {
+    "id": 9,
+    "nombre": "Montaña Almendra Dulce",
+    "marca": 1,
+    "categoria": 1,
+    "informacion": {
+      "procedencia": 1,
+      "tueste": 1,
+      "aromas": [
+        14,
+        15
+      ],
+      "descripcion": "Un clásico colombiano.",
+      "tipo": "grano"
+    },
+    "precio": 8.90,
+    "stock": 40,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://thumbs.dreamstime.com/b/la-visi%C3%B3n-superior-as%C3%B3-los-granos-de-caf%C3%A9-en-sacos-del-c%C3%A1%C3%B1amo-aislados-blanco-101228249.jpg"
+  },
+  {
+    "id": 10,
+    "nombre": "Urbano Intenso Espresso",
+    "marca": 5,
+    "categoria": 2,
+    "informacion": {
+      "procedencia": 3,
+      "tueste": 4,
+      "aromas": [
+        16,
+        17
+      ],
+      "descripcion": "Para quienes prefieren café intenso.",
+      "tipo": "molido"
+    },
+    "precio": 7.50,
+    "stock": 50,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://st2.depositphotos.com/1372611/9568/i/950/depositphotos_95682808-stock-photo-ground-coffee-on-white-plate.jpg"
+  },
+  {
+    "id": 11,
+    "nombre": "Café Bosque Alto",
+    "marca": 1,
+    "categoria": 1,
+    "informacion": {
+      "procedencia": 1,
+      "tueste": 2,
+      "aromas": [
+        18,
+        7
+      ],
+      "descripcion": "Café suave con notas dulces.",
+      "tipo": "grano"
+    },
+    "precio": 9.40,
+    "stock": 30,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://media.gettyimages.com/id/1195729680/es/foto/arpillera-de-caf%C3%A9-y-grano-de-caf%C3%A9.jpg?s=612x612&w=gi&k=20&c=ieJNivA1bOtcmj29a1Dqv5FaGuwFADM-bkx4GltjgaM="
+  },
+  {
+    "id": 12,
+    "nombre": "Sol Etíope Fragante",
+    "marca": 2,
+    "categoria": 1,
+    "informacion": {
+      "procedencia": 2,
+      "tueste": 2,
+      "aromas": [
+        19,
+        20,
+        26
+      ],
+      "descripcion": "Un café floral muy delicado.",
+      "tipo": "molido"
+    },
+    "precio": 12.50,
+    "stock": 20,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://www.shutterstock.com/image-photo/coffee-aroma-600nw-2109923450.jpg"
+  },
+  {
+    "id": 13,
+    "nombre": "Espresso Noble Oscuro",
+    "marca": 3,
+    "categoria": 2,
+    "informacion": {
+      "procedencia": 3,
+      "tueste": 4,
+      "aromas": [
+        22,
+        21,
+        8
+      ],
+      "descripcion": "Blend oscuro con cuerpo profundo.",
+      "tipo": "grano"
+    },
+    "precio": 9.90,
+    "stock": 33,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://st2.depositphotos.com/1372611/9568/i/950/depositphotos_95682808-stock-photo-ground-coffee-on-white-plate.jpg"
+  },
+  {
+    "id": 14,
+    "nombre": "Montaña Floral Vivo",
+    "marca": 1,
+    "categoria": 1,
+    "informacion": {
+      "procedencia": 1,
+      "tueste": 1,
+      "aromas": [
+        3,
+        12
+      ],
+      "descripcion": "Café de aroma vibrante y ligero.",
+      "tipo": "molido"
+    },
+    "precio": 8.70,
+    "stock": 27,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://media.gettyimages.com/id/1149320657/es/foto/caf%C3%A9.jpg?s=612x612"
+  },
+  {
+    "id": 15,
+    "nombre": "Finca Sol Dulzor Tropical",
+    "marca": 2,
+    "categoria": 1,
+    "informacion": {
+      "procedencia": 2,
+      "tueste": 2,
+      "aromas": [
+        24,
+        23
+      ],
+      "descripcion": "Café dulce y afrutado.",
+      "tipo": "grano"
+    },
+    "precio": 11.80,
+    "stock": 24,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://www.shutterstock.com/image-photo/coffee-beans-laying-260nw-2293949915.jpg"
+  },
+  {
+    "id": 16,
+    "nombre": "Sierra Cacao Tostado",
+    "marca": 3,
+    "categoria": 2,
+    "informacion": {
+      "procedencia": 3,
+      "tueste": 3,
+      "aromas": [
+        25,
+        5
+      ],
+      "descripcion": "Notas profundas de cacao tostado.",
+      "tipo": "molido"
+    },
+    "precio": 9.60,
+    "stock": 38,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://thumbs.dreamstime.com/b/ground-coffee-plate-white-27162753.jpg"
+  },
+  {
+    "id": 17,
+    "nombre": "Robusta Fuerte Noche",
+    "marca": 4,
+    "categoria": 3,
+    "informacion": {
+      "procedencia": 4,
+      "tueste": 4,
+      "aromas": [
+        9,
+        21
+      ],
+      "descripcion": "Robusta intenso, ideal para energía extra.",
+      "tipo": "grano"
+    },
+    "precio": 6.20,
+    "stock": 60,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://media.gettyimages.com/id/1195729680/es/foto/arpillera-de-caf%C3%A9-y-grano-de-caf%C3%A9.jpg?s=612x612"
+  },
+  {
+    "id": 18,
+    "nombre": "Urbano Caramelo Suave",
+    "marca": 5,
+    "categoria": 2,
+    "informacion": {
+      "procedencia": 3,
+      "tueste": 1,
+      "aromas": [
+        11,
+        2
+      ],
+      "descripcion": "Blend suave con cuerpo ligero.",
+      "tipo": "molido"
+    },
+    "precio": 7.80,
+    "stock": 42,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://elements-resized.envatousercontent.com/elements-video-cover-images/files/221db688-2a70-4b73-beb2-942366907e04/inline_image_preview.jpg"
+  },
+  {
+    "id": 19,
+    "nombre": "Montaña Clara Citrus",
+    "marca": 1,
+    "categoria": 1,
+    "informacion": {
+      "procedencia": 1,
+      "tueste": 2,
+      "aromas": [
+        27,
+        7
+      ],
+      "descripcion": "Café con un toque cítrico fresco.",
+      "tipo": "grano"
+    },
+    "precio": 9.10,
+    "stock": 35,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://st2.depositphotos.com/1372611/9568/i/950/depositphotos_95682808-stock-photo-ground-coffee-on-white-plate.jpg"
+  },
+  {
+    "id": 20,
+    "nombre": "Sol Floral Bergamota",
+    "marca": 2,
+    "categoria": 1,
+    "informacion": {
+      "procedencia": 2,
+      "tueste": 2,
+      "aromas": [
+        13,
+        4
+      ],
+      "descripcion": "Perfume floral intenso y elegante.",
+      "tipo": "molido"
+    },
+    "precio": 12.20,
+    "stock": 19,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://www.shutterstock.com/image-photo/coffee-beans-260nw-1993942899.jpg"
+  },
+  {
+    "id": 21,
+    "nombre": "Sierra Avellana Dulce",
+    "marca": 3,
+    "categoria": 2,
+    "informacion": {
+      "procedencia": 3,
+      "tueste": 3,
+      "aromas": [
+        15,
+        5
+      ],
+      "descripcion": "Café dulce y redondo.",
+      "tipo": "grano"
+    },
+    "precio": 9.50,
+    "stock": 29,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://thumbs.dreamstime.com/b/la-visi%C3%B3n-superior-as%C3%B3-los-granos-de-caf%C3%A9-en-sacos-del-c%C3%A1%C3%B1amo-aislados-blanco-101228249.jpg"
+  },
+  {
+    "id": 22,
+    "nombre": "Robusta Tierra Oscura",
+    "marca": 4,
+    "categoria": 3,
+    "informacion": {
+      "procedencia": 4,
+      "tueste": 4,
+      "aromas": [
+        8,
+        21
+      ],
+      "descripcion": "Muy intenso, sabor terroso y profundo.",
+      "tipo": "molido"
+    },
+    "precio": 6.10,
+    "stock": 48,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://media.gettyimages.com/id/1195729680/es/foto/arpillera-de-caf%C3%A9-y-grano-de-caf%C3%A9.jpg?s=612x612"
+  },
+  {
+    "id": 23,
+    "nombre": "Montaña Miel Dorada",
+    "marca": 1,
+    "categoria": 1,
+    "informacion": {
+      "procedencia": 1,
+      "tueste": 1,
+      "aromas": [7, 2],
+      "descripcion": "Ligero toque dulce a miel.",
+      "tipo": "grano"
+    },
+    "precio": 8.60,
+    "stock": 37,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://media.gettyimages.com/id/1149320657/es/foto/caf%C3%A9.jpg?s=612x612"
+  },
+  {
+    "id": 24,
+    "nombre": "Sol Aroma Floral Vivo",
+    "marca": 2,
+    "categoria": 1,
+    "informacion": {
+      "procedencia": 2,
+      "tueste": 2,
+      "aromas": [12, 3],
+      "descripcion": "Muy fragante y delicado.",
+      "tipo": "molido"
+    },
+    "precio": 12.10,
+    "stock": 21,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://www.shutterstock.com/image-photo/coffee-ground-spoon-260nw-2322435781.jpg"
+  },
+  {
+    "id": 25,
+    "nombre": "Sierra Dulce Vainilla",
+    "marca": 3,
+    "categoria": 2,
+    "informacion": {
+      "procedencia": 3,
+      "tueste": 3,
+      "aromas": [6, 14],
+      "descripcion": "Dulce, suave y muy aromático.",
+      "tipo": "molido"
+    },
+    "precio": 9.70,
+    "stock": 34,
+    "moneda": "EUR",
+    "unidad": "250g",
+    "imagen": "https://thumbs.dreamstime.com/b/ground-coffee-plate-white-27162753.jpg"
+  }
+]
