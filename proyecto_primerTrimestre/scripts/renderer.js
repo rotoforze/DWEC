@@ -63,13 +63,12 @@ export function addTueste(setTueste) {
  * @param {Set} setAromas 
  */
 export function addAromas(setAromas) {
-    document.querySelector(".aromas-list").innerHTML = "";
     for (const aroma of setAromas) {
         document.querySelector(".aromas-list").innerHTML += (`
-            <div class="checkbox-item">
-                <input type="checkbox" class="btn-check" name="aroma" id="${aroma}">
-                <label class="btn btn-outline-secondary" for="${aroma}">${aroma}</label>
-            </div>
+            <li class=" dropdown-item">
+                <input type="checkbox" name="aroma" id="${aroma}">
+                <label for="${aroma}">${aroma}</label>
+            </li>
             `);
     }
 }

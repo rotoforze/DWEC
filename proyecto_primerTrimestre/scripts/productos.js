@@ -27,7 +27,7 @@ export async function cargarDatos() {
         await catchEveryData();
 
         // renderizamos los datos
-        addMarcas(marcas);
+        addMarcas(categorias);
         addCategorias(categorias);
         addProcedencias(procedencias);
         addTueste(tipoTueste)
@@ -47,48 +47,33 @@ export async function cargarDatos() {
  * Guarda los datos de los productos en diferentes sets
  * para tenerlos ya guardados y más accesibles.
  */
-async function catchEveryData() { 
-    await catchMarcas();
-    for (const producto of productos) {
-        // marca
-        // if (!marcas.has(producto.marca)) marcas.add(producto.marca);
-        // categoria
-        if (!categorias.has(producto.categoria)) categorias.add(producto.categoria);
-        // procendencia
-        if (!procedencias.has(producto.informacion.procedencia)) procedencias.add(producto.informacion.procedencia);
-        // tueste
-        if (!tipoTueste.has(producto.informacion.tueste)) tipoTueste.add(producto.informacion.tueste);
-        // aromas
-        for (const aroma of producto.informacion.aromas) {
-            if (!tipoAromas.has(aroma)) tipoAromas.add(aroma);
-        }
-    }
+async function catchEveryData() {
+    await fetchYGuardado("data/marcas.json", marcas);
+    await fetchYGuardado("data/categorias.json", categorias);
+    await fetchYGuardado("data/procedencias.json", procedencias);
+    await fetchYGuardado("data/tuestes.json", tipoTueste);
+    await fetchYGuardado("data/aromas.json", tipoAromas);
 }
 
-async function catchMarcas() {
+/**
+ * Hace una petición mediante fetchJSON a ruta y guarda los datos
+ * en el Set recibido.
+ * 
+ * @usage fetchJSON
+ * @param {File} ruta 
+ * @param {Set} variable
+ */
+async function fetchYGuardado(ruta, variable) {
     try {
-        temporalData = await fetchJSON("data/marcas.json");
-
-        for (const marca of temporalData) {
-            if (!marcas.has(marca.valor)) marcas.add(marca.valor);
+        // let temporalData = await fetchJSON("data/categorias.json");
+        
+        let temporalData = await fetchJSON(ruta);
+        for (const categoria of temporalData) {
+            if (!variable.has(categoria.valor)) variable.add(categoria.valor);
         }
     } catch (error) {
         console.error(error);
     }
-
-
-}
-function catchCategorias() {
-
-}
-function catchProcedencias() {
-
-}
-function catchTuestes() {
-
-}
-function catchAromas() {
-
 }
 
 /**
@@ -102,6 +87,7 @@ async function fetchJSON(ruta) {
         function (resolve, reject) {
             fetch(ruta)
                 .then((response) => {
+                    // lo devuelvo
                     return resolve(response.json());
                 })
                 .catch((error) => {

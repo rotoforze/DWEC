@@ -15,7 +15,7 @@
         .productos-wrapper {
             background: #f5f5f5;
             border-radius: 15px 0px 0px 15px;
-            height: 100%;
+            height: 75dvh;
             /* ocupa el resto de la pantalla menos el header */
             width: 90dvw;
             margin: 0px auto;
@@ -31,8 +31,22 @@
             overflow-y: scroll;
             padding: 10px;
         }
+
+        #aromasDropdown {
+            margin: 0px !important;
+        }
+
+        .aromas-header {
+            width: 100% !important;
+            display: block;
+            text-align: center;
+            /* margin: 0px auto; */
+            color: #2c2c2c;
+            text-decoration: underline;
+        }
+
         .aromas-btn {
-            width: 40dvw !important; 
+            width: 40dvw !important;
         }
 
         .aromas-list.show {
@@ -87,8 +101,9 @@
 
         form {
             width: max-content !important;
-        } 
-        .navbar .container-fluid{
+        }
+
+        .navbar .container-fluid {
             display: flex !important;
             flex-direction: column !important;
             width: 80dvw;
@@ -161,12 +176,147 @@
         .info-bg {
             background-color: lightskyblue;
         }
+
         .filtros {
             display: flex !important;
+            flex-direction: column !important;
             flex-wrap: wrap !important;
-            justify-content: space-between;
-            flex-direction: row !important;
+            justify-content: space-between !important;
+            margin: 0px !important;
+
         }
-        .filtros * {
-            width: fit-content;
+
+        .filtros2 {
+            width: inherit !important;
+            margin: 0px;
+        }
+
+        .filtros div,
+        .filtros select {
+            /* width: fit-content; */
+            width: 300px;
+            margin-bottom: 10px;
+        }
+
+        /* Checkbox oculto */
+        .filtros-toggle {
+            display: none;
+        }
+
+        /* Desktop: los filtros se muestran normalmente */
+        .filtros-boton {
+            display: none;
+            /* en PC no mostramos el botón */
+        }
+
+        .filtros-contenido {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            flex-direction: row;
+            width: 100% !important;
+        }
+
+        .filtros-contenido select,
+        #aromasDropdown {
+            margin: 5px !important;
+            height: fit-content !important;
+            width: fit-content !important;
+        }
+
+        .putosAromasDELosCOJONES {
+            width: fit-content !important;
+        }
+
+        .putosAromasDELosCOJONES .dropdown-menu {
+            width: inherit;
+            left: unset !important;
+            top: unset !important;
+        }
+
+        /* RESPONSIVE — Menos de 800px */
+        @media (max-width: 800px) {
+            .area-login {
+                flex-direction: column;
+            }
+
+            .area-login .rounded-1 {
+                margin: 0px !important;
+            }
+
+            .contenedor-login .form-login {
+                width: 100% !important;
+            }
+
+            .form-keep-logged {
+                display: flex;
+                justify-content: left;
+            }
+
+            .form-keep-logged * {
+                width: fit-content !important;
+            }
+
+            tr {
+                display: flex;
+            }
+
+            tr td:last-of-type {
+                width: 40px !important;
+            }
+
+            .productos-wrapper {
+                height: 62dvh;
+                margin-top: -4%;
+            }
+
+            .cantidad-control {
+                display: flex;
+                text-align: center;
+            }
+
+            .area-login .dropdown {
+                width: 100% !important;
+                margin-left: 0px !important;
+                margin-right: 0px !important;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                background: rgba(255, 255, 255, 1);
+                background-clip: text;
+            }
+
+            .area-login .dropdown * {
+                width: inherit;
+            }
+
+            /* El botón aparece */
+            .filtros-boton {
+                display: inline-block;
+                background: #f5f5f5;
+                color: #2c2c2c;
+                width: 100%;
+                padding: 10px 14px;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: 600;
+            }
+
+            /* Contenido oculto por defecto */
+            .filtros-contenido {
+
+                max-height: 0;
+                overflow: hidden;
+                padding: 0 12px;
+                transition: max-height .3s ease, padding .3s ease;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+                margin-top: 8px;
+            }
+
+            /* Cuando el checkbox está activado → expandimos */
+            .filtros-toggle:checked~.filtros-contenido {
+                max-height: 500px;
+                padding: 12px;
+            }
         }
