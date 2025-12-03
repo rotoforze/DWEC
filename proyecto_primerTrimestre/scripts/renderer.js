@@ -1,4 +1,4 @@
-import { iniciarSesion, cerrarSesion } from "./userManager.js";
+import { iniciarSesion, cerrarSesion, tieneSesionGuardada } from "./userManager.js";
 
 /**
  * Recibe un Set con las marcas y las añade al correspondiente espacio
@@ -143,7 +143,7 @@ export function mostrarFormLogin() {
                                 <label>Contraseña</label>
                                 <input type="password" class="form-control">
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3 form-keep-logged">
                                 <input type="checkbox" name="keep-logged" id="keep-logged">
                                 <label for="keep-logged">Mantener sesión iniciada</label>
                             </div>
@@ -160,32 +160,58 @@ export function mostrarFormLogin() {
 export function eventoBotonLogin() {
     document.querySelector(".form-login").addEventListener("submit", async (e) => {
         e.preventDefault();
+        // si es valido... intenta iniciar sesión.
+        if (validarInicio()) {
+            await tryToLogIn();
+        } else errorLogin();
+    });
+}
+
+function validarInicio() {
+    const mail = document.querySelector('[type="email"]').value;
+    const password = document.querySelector('[type="password"]').value;
+
+    if (!mail.value || !password.value) return false;
+    return true;
+}
+
+/**
+ * Intenta iniciar sesión, pone una rueda de carga y la quita si hay algún error.
+ * Si no hay error, se carga los elementos y eneseña la información del user.
+ * 
+ * @returns {Promise}
+ */
+export async function tryToLogIn() {
+    mostrarRuedaCargando(document.querySelector(".form-login button"));
+    return new Promise(async function (resolve, reject) {
         document.querySelector(".form-login button").disabled = true;
-        // si el inicio es correcto...
-        await iniciarSesion(
+        return resolve(iniciarSesion(
             document.querySelector('[type="email"]').value,
             document.querySelector('[type="password"]').value).catch(error => {
                 setTimeout(() => {
                     document.querySelector(".form-login button").disabled = false;
                     quitarRuedaCargado(document.querySelector(".form-login button"));
                     errorLogin();
-                }, 1000)
-            });
-    });
+                    return reject(error);
+                }, 1000);
+            }));
+    })
 }
 
-function errorLogin(){
+/**
+ * Muestra un modal de error en el login.
+ */
+function errorLogin() {
     const elemento = document.querySelector(".error-login");
     elemento.hidden = false;
     elemento.classList.add("mostrar");
-    setTimeout(() => {
+
+    // Cuando termine la animación, ocultar y resetear
+    elemento.addEventListener("animationend", () => {
+        elemento.hidden = true;
         elemento.classList.remove("mostrar");
-        elemento.classList.add("desvanecer");
-        setTimeout(() => {
-            elemento.hidden = true;
-            elemento.classList.remove("desvanecer");
-        }, 1000)
-    }, 3000)
+    }, { once: true });
+
 }
 
 /**
@@ -203,5 +229,5 @@ export function mostrarRuedaCargando(elemento) {
  * @param {Node} elemento 
  */
 export function quitarRuedaCargado(elemento) {
-    elemento.querySelector('#loading-spinner').remove();
+    elemento.querySelector('#loading-spinner')?.remove();
 }

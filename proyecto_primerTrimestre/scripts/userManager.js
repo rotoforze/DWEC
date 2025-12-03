@@ -1,4 +1,4 @@
-import { mostrarFormLogin, mostrarInfoUsuario, mostrarRuedaCargando, quitarRuedaCargado } from "./renderer.js";
+import { mostrarFormLogin, mostrarInfoUsuario } from "./renderer.js";
 
 let userData;
 
@@ -10,11 +10,12 @@ let userData;
  * @param {String} psswd 
  */
 export async function iniciarSesion(username, psswd) {
-    // TODO: debe mostrar una rueda cargando por encima mientras ésto ocurre,
-    // al terminar de cargar, borra todo el contenido y muestra la información del usuario
-    // junto a un modal que avisa del correcto inicio de sesión.
-    // rueda de carga
-    mostrarRuedaCargando(document.querySelector(".form-login button"));
+    console.log(getStoredData());
+    const storedData = getStoredData();
+    if (storedData != "undefined") {
+        username = storedData?.mail == undefined ? username : storedData?.mail;
+        psswd = storedData?.password == undefined ? psswd : storedData?.password;
+    }
     
     return new Promise(
         function (resolve, reject) {
@@ -25,8 +26,15 @@ export async function iniciarSesion(username, psswd) {
                 .then((datos) => {
                     for (const user of datos) {
                         if (user.mail == username && user.password == psswd) {
-                            userData = user;
-                            mostrarInfoUsuario(getUserData());
+                            if (tieneSesionGuardada() && storedData && storedData != "undefined") {
+                                userData = getStoredData();
+                            } else if (quiereGuardarSesion()) {
+                                userData = user;
+                                guardarSesion(JSON.stringify(user));
+                            } else {
+                                userData = user;
+                            }
+                            mostrarInfoUsuario(userData);
                             return resolve(true);
                         }
                     }
@@ -45,6 +53,8 @@ export async function iniciarSesion(username, psswd) {
 export function cerrarSesion() {
     userData = undefined;
     mostrarFormLogin();
+    quiereGuardarSesion();
+    guardarSesion();
 }
 
 /**
@@ -62,5 +72,51 @@ export function getUserData() {
  * @param {Object} data 
  */
 function setUserData(data) {
-    userData = data ? data : undefined;;
+    userData = data ? data : undefined;
+}
+
+/**
+ * Recibe un objeto de usuario y lo guarda en el local-storage.
+ * 
+ * @param {Object} user 
+ */
+function guardarSesion(user) {
+    localStorage.setItem("user-data", user);
+}
+
+/**
+ * Devuelve el objeto del user guardado en el local-storage.
+ * 
+ * @returns {Object}
+ */
+function getStoredData() {
+    const item = localStorage.getItem("user-data");
+    if (item != "undefined") {
+        return JSON.parse(localStorage.getItem("user-data"));
+    } return undefined;
+}
+
+/**
+ * Devuelve true si está marcada la casilla de mantener sesión iniciada
+ * y false si está desmarcada. A su vez, guarda en el local-storage
+ * si quiere quedar logged o no.
+ * 
+ * @returns {boolean}
+ */
+function quiereGuardarSesion() {
+    if (document.querySelector("#keep-logged").checked) {
+        localStorage.setItem("keepLogged", true);
+        return true;
+    }
+    localStorage.setItem("keepLogged", false);
+    return false;
+}
+
+/**
+ * Si está en true keepLogged en el localStorage, devuelve true, si no, false.
+ * 
+ * @returns {boolean}
+ */
+export function tieneSesionGuardada() {
+    return localStorage.getItem("keepLogged") == "true" ? true : false; 
 }
