@@ -1,4 +1,4 @@
-import { mostrarFormLogin, mostrarInfoUsuario } from "./renderer.js";
+import { cargarCarritoDesdeUsuario, comprobarCarritoVacio, mostrarFormLogin, mostrarInfoUsuario } from "./renderer.js";
 
 let userData;
 
@@ -16,7 +16,7 @@ export async function iniciarSesion(username, psswd) {
         username = storedData?.mail == undefined ? username : storedData?.mail;
         psswd = storedData?.password == undefined ? psswd : storedData?.password;
     }
-    
+
     return new Promise(
         function (resolve, reject) {
             fetch("./data/usuarios.json")
@@ -28,9 +28,10 @@ export async function iniciarSesion(username, psswd) {
                         if (user.mail == username && user.password == psswd) {
                             if (tieneSesionGuardada() && storedData && storedData != "undefined") {
                                 userData = getStoredData();
+                                cargarCarritoDesdeUsuario();
                             } else if (quiereGuardarSesion()) {
                                 userData = user;
-                                guardarSesion(JSON.stringify(user));
+                                guardarSesion(user);
                             } else {
                                 userData = user;
                             }
@@ -51,16 +52,19 @@ export async function iniciarSesion(username, psswd) {
  * Cierra la sesión borrando los datos del usuario.
  */
 export function cerrarSesion() {
-    userData = undefined;
+    guardarSesion(userData);
     mostrarFormLogin();
     quiereGuardarSesion();
-    guardarSesion();
+    userData = undefined;
+    document.querySelector(".cart-container tbody").innerHTML = "";
+    comprobarCarritoVacio();
+    document.querySelector(".must-be-logged").hidden = false;
 }
 
 /**
  * Devuelve un objeto con la información del usuario.
  * 
- * @returns Object
+ * @returns {Object}
  */
 export function getUserData() {
     return userData ? userData : false;
@@ -71,7 +75,7 @@ export function getUserData() {
  * 
  * @param {Object} data 
  */
-function setUserData(data) {
+export function setUserData(data) {
     userData = data ? data : undefined;
 }
 
@@ -83,7 +87,16 @@ function setUserData(data) {
 export function isUserLogged() {
     if (userData != undefined) {
         return true;
-    }else return false;
+    } else return false;
+}
+
+/**
+ * Devuelve la divisa que el usuario tiene guardada.
+ * 
+ * @returns {String}
+ */
+export function getDivisaDelUsuario() {
+    return userData.preferences.currency;
 }
 
 /**
@@ -92,7 +105,7 @@ export function isUserLogged() {
  * @param {Object} user 
  */
 function guardarSesion(user) {
-    localStorage.setItem("user-data", user);
+    localStorage.setItem("user-data", JSON.stringify(user));
 }
 
 /**
@@ -105,6 +118,36 @@ function getStoredData() {
     if (item != "undefined") {
         return JSON.parse(localStorage.getItem("user-data"));
     } return undefined;
+}
+
+/**
+ * Añade el carrito en el localStorage, actualizando también los datos.
+ */
+export function guardarCarritoEnUsuario() {
+    const user = getUserData(); // usuario actual
+    const tbody = document.querySelector(".cart-container tbody");
+    const filas = tbody.querySelectorAll("tr");
+
+    const inventory = [];
+
+    filas.forEach(tr => {
+        const id = tr.dataset.idProductid;
+        const cantidad = parseInt(tr.querySelector(".cantidad-control span").textContent);
+
+        inventory.push({
+            id: id,
+            quantity: cantidad
+        });
+    });
+
+    // Guardar inventario dentro de las preferencias del usuario
+    user.inventory = inventory;
+
+    // Actualizar datos del usuario
+    setUserData(user);
+
+    // Guardar sesión actualizada
+    guardarSesion(user);
 }
 
 /**
@@ -129,5 +172,5 @@ function quiereGuardarSesion() {
  * @returns {boolean}
  */
 export function tieneSesionGuardada() {
-    return localStorage.getItem("keepLogged") == "true" ? true : false; 
+    return localStorage.getItem("keepLogged") == "true" ? true : false;
 }

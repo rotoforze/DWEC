@@ -130,10 +130,25 @@
             }
         }
 
-        .alerta {
+        .alertas {
             position: fixed;
+            bottom: 20px;
+            left: 10px;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            height: fit-content;
+            gap: 10px;
+            width: 30%;
+            word-wrap: break-word;
+            /* separación entre alertas */
+            z-index: 9999;
+        }
+
+        .alerta {
+            position: relative;
             bottom: 0;
-            left: 50%;
+            left: 100%;
             transform: translateX(-50%) translateY(100%);
             /* empieza fuera de la ventana */
             background: #f44336;
@@ -201,7 +216,7 @@
         }
 
         .ok-bg {
-            background-color: greenyellow;
+            background-color: #00a716;
         }
 
         .info-bg {
