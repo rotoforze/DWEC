@@ -10,7 +10,7 @@ let userData;
  * @param {String} psswd 
  */
 export async function iniciarSesion(username, psswd) {
-    console.log(getStoredData());
+    console.log(getStoredData(), username, psswd);
     const storedData = getStoredData();
     if (storedData != "undefined") {
         username = storedData?.mail == undefined ? username : storedData?.mail;
@@ -73,6 +73,17 @@ export function getUserData() {
  */
 function setUserData(data) {
     userData = data ? data : undefined;
+}
+
+/**
+ * Devuelve true si hay un usuario loggeado y false si no lo hay.
+ * 
+ * @returns {boolean}
+ */
+export function isUserLogged() {
+    if (userData != undefined) {
+        return true;
+    }else return false;
 }
 
 /**

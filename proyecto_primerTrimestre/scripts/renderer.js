@@ -114,9 +114,14 @@ function mostrarProducto(producto) {
  * @param {Object} usuario 
  */
 export function mostrarInfoUsuario(usuario) {
+    // como un usuario ha iniciado sesión
+    document.querySelector(".must-be-logged").remove();
+
     const contLogin = document.querySelector(".contenedor-login");
+    // vaciamos el contenedor del login
     contLogin.innerHTML = "";
 
+    // y metemos la info
     contLogin.innerHTML += (`
             <p><b>Correo</b>: <span>${usuario.mail}</span></p>
             <div id="user-preferences">
@@ -170,8 +175,8 @@ export function eventoBotonLogin() {
 function validarInicio() {
     const mail = document.querySelector('[type="email"]').value;
     const password = document.querySelector('[type="password"]').value;
-
-    if (!mail.value || !password.value) return false;
+    
+    if (!mail || !password) return false;
     return true;
 }
 
@@ -182,21 +187,27 @@ function validarInicio() {
  * @returns {Promise}
  */
 export async function tryToLogIn() {
-    mostrarRuedaCargando(document.querySelector(".form-login button"));
-    return new Promise(async function (resolve, reject) {
-        document.querySelector(".form-login button").disabled = true;
-        return resolve(iniciarSesion(
-            document.querySelector('[type="email"]').value,
-            document.querySelector('[type="password"]').value).catch(error => {
-                setTimeout(() => {
-                    document.querySelector(".form-login button").disabled = false;
-                    quitarRuedaCargado(document.querySelector(".form-login button"));
-                    errorLogin();
-                    return reject(error);
-                }, 1000);
-            }));
-    })
+    const btn = document.querySelector(".form-login button");
+    btn.disabled = true;
+    mostrarRuedaCargando(btn);
+
+    try {
+        const email = document.querySelector('[type="email"]').value;
+        const password = document.querySelector('[type="password"]').value;
+
+        return await iniciarSesion(email, password);
+
+    } catch (error) {
+        setTimeout(() => {
+            btn.disabled = false;
+            quitarRuedaCargado(btn);
+            errorLogin();
+        }, 1000);
+
+        throw error; // rechaza correctamente
+    }
 }
+
 
 /**
  * Muestra un modal de error en el login.

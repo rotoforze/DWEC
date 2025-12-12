@@ -1,6 +1,7 @@
 import { addAromas, addMarcas, addCategorias, addProcedencias, addTueste, cambiarListaProductos } from "./renderer.js";
 
 let productos;
+let productosFiltrados;
 let marcas = new Set();
 let categorias = new Set();
 let procedencias = new Set();
@@ -27,11 +28,12 @@ export async function cargarDatos() {
         await catchEveryData();
 
         // renderizamos los datos
-        addMarcas(categorias);
+        addMarcas(marcas);
         addCategorias(categorias);
         addProcedencias(procedencias);
         addTueste(tipoTueste)
         addAromas(tipoAromas);
+
         cambiarListaProductos(productos);
 
 
@@ -68,8 +70,8 @@ async function fetchYGuardado(ruta, variable) {
         // let temporalData = await fetchJSON("data/categorias.json");
         
         let temporalData = await fetchJSON(ruta);
-        for (const categoria of temporalData) {
-            if (!variable.has(categoria.valor)) variable.add(categoria.valor);
+        for (const data of temporalData) {
+            if (!variable.has(data.valor)) variable.add(data.valor);
         }
     } catch (error) {
         console.error(error);
@@ -96,4 +98,15 @@ async function fetchJSON(ruta) {
                 });
         }
     );
+}
+
+function filtrado() {
+    productosFiltrados = productos;
+    const marcaSeleccionada = document.querySelector('#marcaSelect').value;
+    productosFiltrados.filter(); 
+    const categoriaSeleccionada = document.querySelector('#categoriaSelect').value;   
+    const procedenciaSeleccionada = document.querySelector('#procedenciaSelect').value;
+    const teusteSeleccionado = document.querySelector('#teusteSelect').value;
+    const tipoSeleccionado = document.querySelector('#tipoSelect').value;
+
 }

@@ -1,3 +1,4 @@
+import { convert } from "./currency.js";
 import { cargarDatos } from "./productos.js";
 import { eventoBotonLogin, mostrarRuedaCargando, quitarRuedaCargado, tryToLogIn } from "./renderer.js";
 import { tieneSesionGuardada } from "./userManager.js";
@@ -16,5 +17,5 @@ async function init() {
         await tryToLogIn();
     }
 }
-
 document.addEventListener('DOMContentLoaded', init);
+// console.log(await convert("EUR", "USD", 29.3));
