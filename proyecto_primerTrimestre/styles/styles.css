@@ -282,6 +282,9 @@
 
         /* RESPONSIVE — Menos de 800px */
         @media (max-width: 800px) {
+            .filtros {
+                width: 100%;
+            }
             .area-login {
                 flex-direction: column;
             }
