@@ -285,6 +285,12 @@
             .filtros {
                 width: 100%;
             }
+            .aromas {
+                top: 0px !important;
+                left: 0px !important;
+                width: 80% !important;
+            }
+
             .area-login {
                 flex-direction: column;
             }
@@ -352,9 +358,8 @@
 
             /* Contenido oculto por defecto */
             .filtros-contenido {
-
                 max-height: 0;
-                overflow: hidden;
+                overflow: auto;
                 padding: 0 12px;
                 transition: max-height .3s ease, padding .3s ease;
                 background: white;
