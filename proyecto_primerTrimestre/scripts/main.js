@@ -1,7 +1,6 @@
-import { convert } from "./currency.js";
-import { actualizarStockProducto, cargarDatos, eliminarProductoDelCarrito, filtrado, getAroma, getAromaId, getCategoria, getMarca, getProcedencia, getProducto, getTueste, modificarCantidad, vaciarCarrito } from "./productos.js";
+import { actualizarStockProducto, cargarDatos, filtrado, getAroma, getCategoria, getMarca, getProcedencia, getProducto, getTueste, vaciarCarrito } from "./productos.js";
 import { actualizarTotalCarrito, agregarProductoAlCarrito, cambiarListaProductos, comprobarCarritoVacio, debeIniciarSesion, eventoBotonLogin, mostrarRuedaCargando, productoAdded, productoRemoved, quitarRuedaCargado, tryToLogIn } from "./renderer.js";
-import { getDivisaDelUsuario, isUserLogged, tieneSesionGuardada } from "./userManager.js";
+import { isUserLogged, tieneSesionGuardada } from "./userManager.js";
 let productoActualID = null;
 /**
  * Función que inicia la aplicación
