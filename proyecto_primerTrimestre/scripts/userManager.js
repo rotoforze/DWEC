@@ -12,7 +12,7 @@ let userData;
 export async function iniciarSesion(username, psswd) {
     console.log(getStoredData(), username, psswd);
     const storedData = getStoredData();
-    if (storedData != "undefined") {
+    if (storedData != "undefined" && tieneSesionGuardada()) {
         username = storedData?.mail == undefined ? username : storedData?.mail;
         psswd = storedData?.password == undefined ? psswd : storedData?.password;
     }
