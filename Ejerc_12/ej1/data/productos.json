@@ -1,0 +1,22 @@
+[
+  { "nombre": "Laptop Lenovo IdeaPad", "precio": 850.99, "stock": 15, "categoria": "Electrónica" },
+  { "nombre": "Mouse inalámbrico Logitech", "precio": 25.50, "stock": 120, "categoria": "Accesorios" },
+  { "nombre": "Teclado mecánico Redragon", "precio": 79.99, "stock": 60, "categoria": "Accesorios" },
+  { "nombre": "Monitor Samsung 24\"", "precio": 189.99, "stock": 35, "categoria": "Electrónica" },
+  { "nombre": "Auriculares Sony WH-1000XM5", "precio": 349.99, "stock": 20, "categoria": "Audio" },
+  { "nombre": "Smartphone Xiaomi Redmi Note 13", "precio": 299.99, "stock": 50, "categoria": "Telefonía" },
+  { "nombre": "Tablet iPad 10ª Gen", "precio": 449.00, "stock": 18, "categoria": "Tablets" },
+  { "nombre": "Disco SSD 1TB Kingston", "precio": 99.99, "stock": 75, "categoria": "Almacenamiento" },
+  { "nombre": "Memoria RAM 16GB DDR4", "precio": 69.90, "stock": 90, "categoria": "Componentes" },
+  { "nombre": "Impresora HP DeskJet 3776", "precio": 129.99, "stock": 22, "categoria": "Impresión" },
+  { "nombre": "Cámara web Logitech C920", "precio": 89.99, "stock": 40, "categoria": "Video" },
+  { "nombre": "Router TP-Link Archer C6", "precio": 59.99, "stock": 55, "categoria": "Redes" },
+  { "nombre": "Smartwatch Samsung Galaxy Watch 6", "precio": 279.99, "stock": 30, "categoria": "Wearables" },
+  { "nombre": "Altavoz Bluetooth JBL Charge 5", "precio": 179.99, "stock": 45, "categoria": "Audio" },
+  { "nombre": "Silla gamer DXRacer", "precio": 329.99, "stock": 12, "categoria": "Muebles" },
+  { "nombre": "Mesa de escritorio ajustable", "precio": 249.99, "stock": 10, "categoria": "Muebles" },
+  { "nombre": "Fuente de poder 650W Corsair", "precio": 109.99, "stock": 28, "categoria": "Componentes" },
+  { "nombre": "Tarjeta gráfica RTX 4060", "precio": 399.99, "stock": 14, "categoria": "Componentes" },
+  { "nombre": "Consola PlayStation 5", "precio": 499.99, "stock": 8, "categoria": "Videojuegos" },
+  { "nombre": "Control Xbox Series X", "precio": 64.99, "stock": 70, "categoria": "Videojuegos" }
+]
