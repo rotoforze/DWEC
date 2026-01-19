@@ -88,9 +88,22 @@ function mostrarProductos() {
             <p>Precio: <b>${producto.precio}</b> €</p>
             <p>x<b>${producto.stock}</b></p>
             <p class="categoria">${producto.categoria}</p>
-            <button class='addToCart' id='${producto.id}'>Añadir al carrito</button>
+            <button class='addToCart' data-id='${producto.id}'>Añadir al carrito</button>
         </div>`;
     }
+
+    // cargar los eventos para cada boton, coje el id del atributo data-id
+    // y lo añade a div.carrito
+    document.querySelectorAll('.addToCart').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.target.getAttribute('data-id')
+        })
+    })
+
+    // comprueba el localstorage, si hay contenido, lo saca y lo muestra, si no,
+    // lo inicializa a []
+
+    // lo añade al localstorage
 }
 
 function animacionCarga() {
