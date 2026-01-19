@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ej12.3</title>
+</head>
+<body>
+    <form>
+        <label for="nombre">Nombre</label><br>
+        <input type="text" name="nombre" id="nombre" required><br>
+        <label for="sku">SKU</label><br>
+        <input type="text" name="sku" id="sku" required minlength="5"><br>
+        <label for="precio">Precio</label><br>
+        <input type="number" name="precio" id="precio" required minlength="0"><br>
+        <label for="stock">Stock</label><br>
+        <input type="number" name="stock" id="stock" required minlength="0"><br>
+        <label for="categoria">Categoria</label><br>
+        <input type="text" name="categoria" id="categoria" required><br><br>
+        <input type="submit" value="enviar" disabled>
+    </form>
+    <div class="mensajes"></div>
+</body>
+<script type="module" src="scripts/main.js"></script>
+</html>
