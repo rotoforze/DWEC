@@ -10,25 +10,28 @@ async function init() {
     if (!productos) {
         window.alert('fallo pidiendo los datos.')
         return;
-    } 
+    }
 
     console.log(productos);
 
     mostrarProductos();
 
+    for (const producto of productos) {
+        if (!categorias.has(producto.categoria)) {
+            console.log(categorias)
+            categorias.add(producto.categoria);
+            document.querySelector('#categories').innerHTML += `
+                <option value="${producto.categoria}">${producto.categoria}</option>`;
+        }
+    }
+
+    document.querySelector('#order').addEventListener('change', mostrarProductos);
+    document.querySelector('#categories').addEventListener('change', mostrarProductos);
 
     if (productos) {
         clearInterval(idIntervaloCarga);
         document.querySelector('.pantallaCarga').style.display = 'none';
         document.querySelector('.app').hidden = false;
-    }
-
-    for (const producto of productos) {
-        if (!categorias.has(producto.categoria)) {
-            categorias.add(producto.categoria);
-        }
-        // meter en el select de categories
-        // document.querySelector
     }
 
 }
@@ -46,10 +49,25 @@ function mostrarProductos() {
     const contenedor = document.querySelector('.products');
     contenedor.innerHTML = '';
 
-    document.querySelector('#order');
+    let productosFiltrados = structuredClone(productos);
 
+    const order = document.querySelector('#order').value;
 
-    for (const producto of productos) {
+    if (order == 'minor') {
+        productosFiltrados.sort((a, b) => a.precio - b.precio);
+    } else if (order == 'mayor') {
+        productosFiltrados.sort((a, b) => b.precio - a.precio);
+    } else if (order != 'all') console.error('orden inválido');
+
+    const categories = document.querySelector('#categories').value;
+    
+    if (categories != 'all') {
+        productosFiltrados = productosFiltrados.filter((producto) => {
+            if (producto.categoria == categories) return producto;
+        })
+    }
+
+    for (const producto of productosFiltrados) {
         contenedor.innerHTML += `<div class="product">
             <h3>${producto.nombre}</h3>
             <p>Precio: <b>${producto.precio}</b> €</p>
