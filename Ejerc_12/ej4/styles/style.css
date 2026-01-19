@@ -1,32 +1,19 @@
-.pantallaCarga {
+.container {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    font-style: italic;
-    color: #6d6deb;
 }
-.app {
+hr {
+    width: 100%;
+}
+.card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    overflow-y: scroll;
-    width: 100dvw;
-    height: 100dvh;
-    background-color: #f1f1f1;
-    color: #181818
-}
-.products {
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-}
-.product {
-    width: 29%;
-    padding: 1%;
-    background-color: #f4f4f4;
-    margin: 1%;
-    border: #181818 1px solid;
+    width: 33dvw;
+    height: fit-content;
+    border: 1px solid #313131;
     border-radius: 10px;
-}
-.categoria {
-    font-style: italic;
+    padding: 10px;
+    margin: 10px;
 }
