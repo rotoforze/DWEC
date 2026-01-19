@@ -58,6 +58,8 @@ async function cargarProductos() {
     })
 }
 
+
+
 function mostrarProductos() {
     const contenedor = document.querySelector('.products');
     contenedor.innerHTML = '';
@@ -86,6 +88,7 @@ function mostrarProductos() {
             <p>Precio: <b>${producto.precio}</b> €</p>
             <p>x<b>${producto.stock}</b></p>
             <p class="categoria">${producto.categoria}</p>
+            <button class='addToCart' id='${producto.id}'>Añadir al carrito</button>
         </div>`;
     }
 }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ej12.1</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="pantallaCarga">
+        <h1>Cargando <span class="puntosCarga"></span> </h1>
+    </div>
+    <div class="app" hidden>
+        <h1>Productos</h1>
+        <div class="filtros">
+            <button class="temaClaro">Tema claro</button>
+            <button class="temaOscuro">Tema oscuro</button>
+            <select name="order" id="order">
+                <option value="all">Todos los precios</option>
+                <option value="minor">De menor a mayor</option>
+                <option value="mayor">De mayor a menor</option>
+            </select>
+            <select name="categories" id="categories">
+                <option value="all">Todas</option>
+            </select>
+            <div class="carrito">
+                
+            </div>
+        </div>
+        <div class="products"></div>
+    </div>
+</body>
+<script type="module" src="scripts/main.js"></script>
+</html>
