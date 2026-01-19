@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+hr {
+    width: 100%;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 33dvw;
+    height: fit-content;
+    border: 1px solid #313131;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
