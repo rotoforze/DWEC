@@ -57,8 +57,8 @@ function modificarImagenes(imagenes, marcaDeAgua = null, ancho = 0, formato) {
                     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
                     if (marcaDeAgua) {
-                        const porcentaje = 200
-                        ctx.font = `${ancho > 0 ? ancho / 100 * porcentaje : img.width / 100 * porcentaje} Arial`;
+                        const porcentaje = 10;
+                        ctx.font = `${ancho > 0 && ancho ? ancho / 100 * porcentaje : img.width / 100 * porcentaje}px Arial`;
                         ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
                         ctx.textAlign = 'center';
 
