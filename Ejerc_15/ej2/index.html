@@ -1,12 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>15.2</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
-    
+    <div class="tableros-kanban">
+        <div class="columna" id="columna-por-emepzar">
+            <h2>Por empezar</h2>
+            <div class="tarea" id="tarea-1" draggable="true"><p>hacer react 9.1</p></div>
+            <div class="tarea" id="tarea-2" draggable="true"><p>hacer react 10</p></div>
+            <div class="tarea" id="tarea-3" draggable="true"><p>hacer js 16</p></div>
+        </div>
+        <div class="columna" id="columna-en-progreso">
+            <h2>En progrso</h2>
+            <div class="tarea" id="tarea-4" draggable="true"><p>hacer react 8.1</p></div>
+            <div class="tarea" id="tarea-5" draggable="true"><p>hacer js 15</p></div>
+        </div>
+        <div class="columna" id="columna-finalizado">
+            <h2>Finalizado</h2>
+            <div class="tarea" id="tarea-6" draggable="true"><p>hacer js 12</p></div>
+            <div class="tarea" id="tarea-7" draggable="true"><p>hacer js 14</p></div>
+            <div class="tarea" id="tarea-8" draggable="true"><p>hacer reac 7.1</p></div>
+        </div>
+    </div>
 </body>
 <script type="module" src="scripts/main.js"></script>
+
 </html>
