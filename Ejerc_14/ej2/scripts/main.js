@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', init);
 let idIntervaloCarga;
 let productos;
 let categorias = new Set();
+let carrito = [];
 
 async function init() {
     animacionCarga()
@@ -28,7 +29,7 @@ async function init() {
     if (productos) {
         clearInterval(idIntervaloCarga);
         document.querySelector('.pantallaCarga').style.display = 'none';
-        document.querySelector('.app').hidden = false;
+        document.querySelector('.app').style.display = 'flex';
     }
 
     // parte del ej 14.1
@@ -39,10 +40,9 @@ async function init() {
 
 // funcion del ej 14.1
 function cambiarTema(temaRecibido) {
-    console.log('cambiando tema... ', temaRecibido);
     let temaGuardado = sessionStorage.getItem('tema');
 
-    if ((temaGuardado != null && temaGuardado != undefined) || (temaRecibido != undefined && temaRecibido.length > 0)) {
+    if ((temaGuardado == null || temaGuardado == undefined) || (temaRecibido != undefined && temaRecibido.length > 0)) {
         sessionStorage.setItem('tema', temaRecibido);
         temaGuardado = sessionStorage.getItem('tema');
     }
@@ -57,8 +57,6 @@ async function cargarProductos() {
             .catch(error => reject(error))
     })
 }
-
-
 
 function mostrarProductos() {
     const contenedor = document.querySelector('.products');
@@ -96,14 +94,72 @@ function mostrarProductos() {
     // y lo añade a div.carrito
     document.querySelectorAll('.addToCart').forEach((btn) => {
         btn.addEventListener('click', (e) => {
-            e.target.getAttribute('data-id')
+            console.log(carrito)
+            addOneProduct(e.target.getAttribute('data-id'));
+            syncLocalStorage();
+            syncCartUI();
         })
     })
 
+    // lo añade al localstorage
+    if (localStorage.getItem('cart') != undefined || localStorage.getItem('cart') != null) {
+        carrito = JSON.parse(localStorage.getItem('cart'));
+    }
+    syncCartUI();
+}
+// si no existe, devuelve false, si existe devuelve true, además lo inizializa a 1 o suma 1 si existes
+function addOneProduct(id) {
+    for (const productoEnCarrito of carrito) {
+        if (productoEnCarrito.productId == id) {
+            // add 1
+            productoEnCarrito.quantity++;
+            return true;
+        }
+    }
+    // no devolvió true
+    carrito = [
+        ...carrito,
+        {
+            "productId": id,
+            "quantity": 1
+        }
+    ];
+    return false;
+}
+
+function syncLocalStorage() {
     // comprueba el localstorage, si hay contenido, lo saca y lo muestra, si no,
     // lo inicializa a []
+    if (localStorage.getItem('cart') != undefined || localStorage.getItem('cart') != null) {
+        if (localStorage.getItem('cart') != JSON.stringify(carrito)) {
+            localStorage.setItem('cart', JSON.stringify(carrito));
+        }
+    } else {
+        localStorage.setItem('cart', JSON.stringify(carrito));
+    }
+}
 
-    // lo añade al localstorage
+function syncCartUI() {
+    let carritoHTML = document.querySelector('.carrito');
+    carritoHTML.innerHTML = '';
+    if (carrito) {
+        let productosEnElCarrito = ``;
+        for (const productoEnCarrito of carrito) {
+            productosEnElCarrito += `
+                <li>${getNombreProducto(productoEnCarrito.productId)} - x${productoEnCarrito.quantity}</li>
+            `;
+        }
+        carritoHTML.innerHTML += `
+            <ul>${productosEnElCarrito}</ul>
+        `;
+        
+    } else carrito.innerHTML = 'no hay productos en el carrito';
+}
+
+function getNombreProducto(id) {
+    for (const producto of productos) {
+        if (producto.id == id) return producto.nombre;
+    }
 }
 
 function animacionCarga() {
