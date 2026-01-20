@@ -1,0 +1,9 @@
+.thumbnail {
+    width: 15dvw;
+    border: 1px #1f1f1f solid;
+    margin: 10px;
+}
+.descarga {
+    display: flex;
+    flex-direction: column;
+}

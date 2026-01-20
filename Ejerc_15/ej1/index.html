@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15.1</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <form>
+        <label for="marcaAgua">Marca de agua</label><br>
+        <input type="text" name="marcaAgua" id="marcaAgua"><br>
+        <label for="ancho">Tamaño</label><br>
+        <input type="number" name="ancho" id="ancho"><br>
+        <label for="formato">Formato</label>
+        <select name="formato" id="formato">
+            <option value="none">No cambiar</option>
+            <option value="jpg">JPG</option>
+            <option value="png">PNG</option>
+        </select><br><br>
+        <input type="submit" value="Procesar Imágenes" disabled>
+        <input type="file" name="archivos[]" id="archivos" accepts="images/*" multiple />
+    </form>
+    <div class="preview"></div>
+    <div class="descarga"></div>
+</body>
+<script type="module" src="scripts/main.js"></script>
+</html>
