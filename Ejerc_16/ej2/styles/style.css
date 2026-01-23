@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100dvw;
+    text-align: center;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    width: 90%;
+}
+.evento {
+    margin: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #1f1f1f;
+    border-radius: 10px;
+    width: 40dvw;
+}
+
+.contador {
+    padding: 10px;
+    font-weight: bolder;
+    font-size: larger;
+}
+.activo {
+    color: #3c8039;
+}
+.inactivo {
+    color: #803939;
+}
