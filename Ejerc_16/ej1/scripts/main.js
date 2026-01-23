@@ -14,6 +14,8 @@ async function fethcData() {
 }
 
 function parseLog(log = '') {
+    if (log.length < 1) return;
+    
     log = log.replaceAll(' ', '');
     log = log.replaceAll('\r\n', '|');
     log = log.split('|');
@@ -33,6 +35,5 @@ function parseLog(log = '') {
         }else canContinue = false;
     }
 
-    console.log(users);
-
+    return users;
 }
