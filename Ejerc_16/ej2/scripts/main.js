@@ -36,7 +36,7 @@ function parseJSONToHTML(json) {
             <p>${item.descripcion}</p>
             <p>
                 <b>Fecha: </b>
-                <span>${new Date(item.fecha).getDate()}/${new Date(item.fecha).getMonth() + 1}/${new Date(item.fecha).getUTCFullYear()}</span>
+                <span>${new Date(item.fecha).toLocaleDateString()}</span>
             </p>
             <div class="contador activo" data-time="${item.fecha}"></div>
             <input type="number" placeholder="Días a sumar" min='0'>
