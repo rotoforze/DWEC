@@ -1,9 +1,13 @@
 import express from 'express';
 import morgan from 'morgan';
 import { createWriteStream } from 'fs';
-
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { router as artistaRouter } from './artista/index.mjs';
 // declaramos la aplicacion express
 const app = express();
+
+app.use(express.static(`${dirname(fileURLToPath(import.meta.url))}/public`));
 
 // instanciamos la clase encargada de escribir el log, dandole de 
 // params el nombre del archivo del log y en opciones
@@ -16,10 +20,14 @@ app.use(morgan('common', {
     stream: accessLogStream
 }));
 
-// enviamos al cliente la vista.
-app.get('/', (req, res) => {
-    res.send('My first express application');
-});
+
+// configuro express con urlencoded
+app.use(express.urlencoded({ extended: false }));
+
+app.use('/artista', artistaRouter);
+
+app.get('/', (request, response) => response.redirect('/artista'));
+
 
 // abrimos el puerto y ademas, lo mostramos en consola para acceder rapido
 app.listen(8080, () => {
