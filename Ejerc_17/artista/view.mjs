@@ -8,24 +8,36 @@ export function render(artistas) {
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a href="/artista/form">Añadir nuevo Artista</a>
   <table>
-    <thead><tr><th>Id</th><th>Title</th><th>Year</th><th></th><th></th></tr></thead>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Pais</th>
+        <th>Genero</th>
+        <th>Fecha de formación</th>
+        <th>Acciones</th>
+        <th></th>
+      </tr>
+    </thead>
     <tbody>
       ${artistas
-        .map(
-          (artista) => `
+      .map(
+        (artista) => `
         <tr>
-          <td>${artista.id}</td>
-          <td>${artista.title}</td>
-          <td>${artista.year}</td>
-          <td><a href="/artista/delete/${artista.id}">delete</a></td>
-          <td><a href="/artista/form/${artista.id}">edit</a></td> 
+          <td><img width="50px" src="${artista.foto}"/></td>
+          <td>${artista.nombre}</td>
+          <td>${artista.pais}</td>
+          <td>${artista.genero}</td>
+          <td>${artista.fecha_formacion}</td>
+          <td><a class="edit" href="/artista/form/${artista.id}">edit</a></td> 
+          <td><a class="delete" href="/artista/delete/${artista.id}">delete</a></td>
         </tr>`
-        )
-        .join('')}
+      )
+      .join('')}
     </tbody>
   </table>
-  <a href="/artista/form">new</a>
 </body>
 </html>
   `;

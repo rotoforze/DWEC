@@ -1,0 +1,26 @@
+body {
+    background-color: #d1d1d1;
+}
+table {
+    margin: 0px auto;
+    border-collapse: collapse;
+}
+thead {
+    background-color: #598ef0;
+    border-radius: 10px 10px 0px 0px;
+    color: #d1d1d1;
+}
+
+td {
+    width: fit-content;
+}
+a {
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.edit {
+    color: #598ef0;
+}
+.delete {
+    color: #e76751;
+}

@@ -15,7 +15,7 @@ export async function removeAction(request, response) {
 }
 
 export async function formAction(request, response) {
-  let artista = { id: '', title: '', year: '' };
+  let artista = { id: '', nombre: '', pais: '', genero: '', fecha_formacion: '', foto: '' };
 
   if (request.params.id) {
     artista = await get(parseInt(request.params.id, 10));
@@ -30,8 +30,11 @@ export async function formAction(request, response) {
 export async function saveAction(request, response) {
   const artista = {
     id: request.body.id,
-    title: request.body.title,
-    year: request.body.year,
+    nombre: request.body.nombre,
+    pais: request.body.pais,
+    genero: request.body.genero,
+    fecha_formacion: request.body.fecha_formacion,
+    foto: request.body.foto,
   };
   await save(artista);
   response.redirect(request.baseUrl);
