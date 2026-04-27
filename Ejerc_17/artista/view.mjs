@@ -8,6 +8,11 @@ export function render(artistas) {
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <nav class="menu">
+    <a href="/">Inicio</a>
+    <a href="/album">Álbumes</a>
+    <a href="/artista">Artistas</a>
+  </nav>
   <a href="/artista/form">Añadir nuevo Artista</a>
   <table>
     <thead>

@@ -49,7 +49,7 @@ let data = [
   }
 ]
 
-function getNextId() {
+export function getNextId() {
   return Math.max(...data.map((artista) => artista.id)) + 1;
 }
 
@@ -68,8 +68,8 @@ export function getAll() {
   return Promise.resolve(data);
 }
 
-export function get(id) {
-  return Promise.resolve(data.find((artista) => artista.id === id));
+export async function get(id) {
+  return Promise.resolve(data.find((artista) => artista.id == id));
 }
 
 export function remove(id) {

@@ -4,7 +4,6 @@ import {
   removeAction,
   formAction,
   saveAction,
-  detalleAction, getJSON,
 } from './controller.mjs';
 
 const router = Router();
@@ -14,7 +13,5 @@ router.get('/delete/:id', removeAction);
 router.get('/form', formAction);      // sin id, nuevo
 router.get('/form/:id', formAction);  // con id
 router.post('/save', saveAction);
-router.get('/detalle/:id', detalleAction);
-router.get('/api/:id', getJSON);
 
 export { router };

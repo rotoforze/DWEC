@@ -8,6 +8,12 @@ export function render(artista) {
     <link rel="stylesheet" href=" /style.css" />
   </head>
   <body>
+    <nav class="menu">
+    <a href="/">Inicio</a>
+    <a href="/album">Álbumes</a>
+    <a href="/artista">Artistas</a>
+  </nav>
+  <a href="/artista">Volver</a>
     <h1>${artista.id != '' ? "Editar " : "Crear "}Artista</h1>
     <form action="/artista/save" method="post">
       <input type="hidden" id="id" name="id" value="${artista.id}" />
@@ -25,7 +31,7 @@ export function render(artista) {
       </div>
       <div>
         <label for="fecha_formacion">fecha_formacion:</label>
-        <input type="year" id="fecha_formacion" name="fecha_formacion" value="${artista.fecha_formacion}" />
+        <input type="number" min="0" max="${new Date().getFullYear()}" id="fecha_formacion" name="fecha_formacion" value="${artista.fecha_formacion}" />
       </div>
       <div>
         <label for="foto">foto:</label>

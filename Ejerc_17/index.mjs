@@ -3,7 +3,9 @@ import morgan from 'morgan';
 import { createWriteStream } from 'fs';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { router as artistaRouter } from './artista/index.mjs';
+import { router as artistaRouter } from './artista/index.mjs'
+import { router as albumRouter } from './album/index.mjs'
+
 // declaramos la aplicacion express
 const app = express();
 
@@ -25,6 +27,7 @@ app.use(morgan('common', {
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/artista', artistaRouter);
+app.use('/album', albumRouter);
 
 app.get('/', (request, response) => response.redirect('/artista'));
 
